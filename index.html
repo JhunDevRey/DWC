@@ -2,15 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Runs immediately, before any other script. Only when this succeeds does
+         the CSS hide [data-reveal] sections for the fade-in effect — so a
+         blocked/broken/slow main.js can never leave content invisible. -->
+    <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duque Workforce Connect | Find Your Future</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmH+zLeBuhoNPvSl5KYnjxM1wYI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="index.css">
@@ -22,7 +24,7 @@
 
     <nav id="mainNav">
         <a href="#home" class="logo-link">
-            <img src="dwc_logo2.png" alt="Duque Workforce Connect Logo" class="nav-logo">
+            <img src="assets/img/dwc_logo2.png" alt="Duque Workforce Connect Logo" class="nav-logo">
         </a>
         <div class="nav-links" id="navLinks">
             <a href="#home">Home</a>

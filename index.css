@@ -1,3 +1,10 @@
+/* ==========================================================================
+   Duque Workforce Connect — Design System
+   Palette kept intentionally: red primary, dark navy, light slate.
+   Gold added as a secondary accent (pulled from the wordmark) for a more
+   premium, "placement agency" feel instead of a flat single-accent look.
+   ========================================================================== */
+
 :root {
     --primary: #d00;
     --primary-dark: #a30000;
@@ -92,19 +99,24 @@ h1, h2, h3, h4 {
     font-size: 1.08rem;
 }
 
-[data-reveal] {
+/* Content is visible by default (progressive enhancement). The fade-in-on-
+   scroll effect below only ever applies once JS successfully runs and adds
+   the "js" class to <html> (see the inline script in <head>). This means a
+   blocked/broken/slow-loading script can never leave section content
+   permanently invisible. */
+.js [data-reveal] {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-[data-reveal].is-visible {
+.js [data-reveal].is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    [data-reveal] {
+    .js [data-reveal] {
         opacity: 1;
         transform: none;
         transition: none;
@@ -119,7 +131,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     padding: 14px 8%;
@@ -132,7 +144,7 @@ nav {
 }
 
 nav.scrolled {
-    background: rgba(255, 255, 255);
+    background: rgba(255, 255, 255, 0.96);
     box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
     border-bottom-color: var(--border);
     padding: 8px 8%;
@@ -151,6 +163,7 @@ nav a {
     font-size: 0.92rem;
     transition: color 0.3s;
     position: relative;
+    padding: 6px 0;
 }
 
 nav a:not(.btn)::after {
@@ -183,14 +196,14 @@ nav a:hover {
 }
 
 .nav-logo {
-    height: 100px;
+    height: 64px;
     width: auto;
     object-fit: contain;
     transition: height 0.35s ease, transform 0.3s ease;
 }
 
 nav.scrolled .nav-logo {
-    height: 70px;
+    height: 50px;
 }
 
 .logo-link:hover .nav-logo {
@@ -1053,6 +1066,42 @@ h2 {
 
 .modal-footer { padding: 20px 26px; border-top: 1px solid var(--border); background: var(--light); }
 
+/* --- Fullscreen modal on mobile --- */
+@media (max-width: 768px) {
+    .side-modal {
+        top: 100%;
+        right: 0;
+        width: 100%;
+        height: 100dvh;
+        transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .side-modal.active { top: 0; right: 0; }
+
+    .modal-header {
+        padding: 18px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .modal-header h3 { font-size: 1.2rem; }
+
+    .close-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .modal-body { padding: 20px 16px 100px; }
+
+    .modal-footer {
+        position: sticky;
+        bottom: 0;
+        padding: 16px;
+    }
+}
+
 /* --- Pro tip --- */
 .pro-tip {
     text-align: center;
@@ -1382,9 +1431,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .nav-toggle { 
-        display: flex;
-    }
+    .nav-toggle { display: flex; }
 
     .nav-links {
         position: fixed;
