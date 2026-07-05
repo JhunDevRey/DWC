@@ -40,18 +40,40 @@
     scroll-behavior: smooth;
 }
 
+html {
+    font-size: 100%;
+}
+
+/* Scale down the rem-based type/spacing scale a touch on smaller phones so
+   nothing feels cramped or oversized — most of this design system is
+   rem-based, so this one lever tunes the whole site at once. */
+@media (max-width: 480px) {
+    html { font-size: 93.75%; } /* ~15px base */
+}
+
+@media (max-width: 360px) {
+    html { font-size: 87.5%; } /* ~14px base */
+}
+
 body {
     font-family: var(--font-body);
     color: var(--dark);
     line-height: 1.65;
     background: var(--white);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
+
+img, svg { max-width: 100%; height: auto; }
 
 h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
     line-height: 1.15;
+}
+
+section[id] {
+    scroll-margin-top: 64px;
 }
 
 /* ==========================================================================
@@ -131,7 +153,8 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    /* background: rgba(255, 255, 255, 0.7); */
+    background: #ffffff;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     padding: 14px 8%;
@@ -184,7 +207,8 @@ nav a:not(.btn).active::after {
 }
 
 nav a:hover {
-    color: var(--primary);
+    /* color: var(--primary); */
+    color: #e8c766;
 }
 
 /* --- Logo --- */
@@ -196,14 +220,14 @@ nav a:hover {
 }
 
 .nav-logo {
-    height: 64px;
+    height: 84px;
     width: auto;
     object-fit: contain;
     transition: height 0.35s ease, transform 0.3s ease;
 }
 
 nav.scrolled .nav-logo {
-    height: 50px;
+    height: 70px;
 }
 
 .logo-link:hover .nav-logo {
@@ -320,7 +344,7 @@ section {
 }
 
 h2 {
-    font-size: 2.6rem;
+    font-size: clamp(1.6rem, 1.25rem + 1.5vw, 2.6rem);
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -392,7 +416,7 @@ h2 {
 
 #home h1 {
     font-family: var(--font-display);
-    font-size: 3.6rem;
+    font-size: clamp(2rem, 1.44rem + 2.4vw, 3.6rem);
     font-weight: 700;
     margin-bottom: 1.25rem;
     min-height: 100px;
@@ -526,11 +550,9 @@ h2 {
     50% { transform: translate(-50%, 8px); }
 }
 
-@media (max-width: 768px) {
-    #home h1 { font-size: 2.3rem; min-height: 130px; }
-    .hero-subtext { font-size: 1rem; }
-    .hero-stats { gap: 30px; }
-}
+/* Hero responsive sizing is consolidated in the Responsive section near the
+   bottom of this file, using clamp() so it scales smoothly at any width
+   rather than jumping at a couple of hard breakpoints. */
 
 /* ==========================================================================
    About
@@ -1425,7 +1447,6 @@ footer {
 
 @media (max-width: 1024px) {
     section { padding: 100px 6%; }
-    #home h1 { font-size: 3rem; }
     nav { padding: 14px 5%; }
     .stats-band { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1447,6 +1468,7 @@ footer {
         box-shadow: -10px 0 30px rgba(0,0,0,0.12);
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         gap: 8px;
+        overflow-y: auto;
     }
 
     .nav-links.active { right: 0; }
@@ -1454,23 +1476,54 @@ footer {
     nav a { margin-left: 0; font-size: 1.05rem; width: 100%; padding: 10px 0; }
     nav a.head-btn2 { margin-top: 16px; text-align: center; }
 
+    .nav-logo { height: 44px; }
+    nav.scrolled .nav-logo { height: 38px; }
+
     section { padding: 90px 6%; }
-    h2 { font-size: 2rem; }
-    #home h1 { font-size: 2.4rem; }
     .card-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     .about-details { gap: 32px; }
     .benefit-cta { padding: 2rem; }
+    .benefit-cta-copy h3 { font-size: 1.5rem; }
+
+    .hero-stats { gap: 28px; margin-top: 44px; padding-top: 26px; }
+    .hero-stat .num { font-size: 1.7rem; }
+
+    .contact-container { padding: 2rem; }
+    footer { padding: 56px 6% 24px; }
 }
 
 @media (max-width: 480px) {
     nav a { font-size: 0.95rem; }
     section { padding: 70px 5%; }
-    h2 { font-size: 1.75rem; }
-    #home h1 { font-size: 2rem; }
     .btn { width: 100%; text-align: center; }
     .hero-cta-row { flex-direction: column; width: 100%; }
     .value-card, .hover-card .card-body { padding: 1.5rem; }
     .apply-container { padding: 2rem 1.5rem; }
     .contact-container { padding: 1.8rem; }
     .back-to-top { bottom: 18px; right: 18px; width: 44px; height: 44px; }
+
+    .hero-eyebrow { font-size: 0.7rem; padding: 6px 14px; margin-bottom: 20px; }
+    .hero-subtext { font-size: 0.95rem; line-height: 1.7; }
+    .hero-stats { gap: 20px; }
+    .hero-stat { min-width: 80px; }
+    .hero-stat .num { font-size: 1.4rem; }
+    .hero-stat .label { font-size: 0.68rem; }
+
+    .job-card-list { padding: 18px; }
+    .job-avatar { width: 44px; height: 44px; font-size: 1rem; }
+    .job-card-list h3 { font-size: 1.1rem; }
+
+    .about-media img { max-height: 260px; }
+    .benefit-cta-media img { max-height: 190px; }
+    .benefit-cta { padding: 1.5rem; }
+
+    .footer-grid { gap: 32px; }
+    footer { padding: 48px 6% 20px; }
+}
+
+@media (max-width: 360px) {
+    .hero-cta-row .btn { padding: 12px 20px; font-size: 0.85rem; }
+    .job-avatar { display: none; }
+    .careers-search { min-width: 0; }
+    .stat-item .num { font-size: 1.9rem; }
 }
