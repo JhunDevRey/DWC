@@ -167,7 +167,8 @@ nav {
 }
 
 nav.scrolled {
-    background: rgba(255, 255, 255, 0.96);
+    /* background: rgba(255, 255, 255, 0.96); */
+    background: #ffffff;
     box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
     border-bottom-color: var(--border);
     padding: 8px 8%;
