@@ -615,6 +615,19 @@ h2 {
     z-index: -1;
 }
 
+.about-media::after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    right: -14px;
+    width: 90px;
+    height: 90px;
+    border-bottom: 3px solid var(--gold);
+    border-right: 3px solid var(--gold);
+    border-radius: 0 0 var(--radius-lg) 0;
+    z-index: -1;
+}
+
 /* --- Stats band --- */
 .stats-band {
     display: grid;
