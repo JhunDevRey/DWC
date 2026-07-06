@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>document.documentElement.classList.add('js');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | Duque Workforce Connect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/wet-boew/assets/favicon.ico">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav id="mainNav">
+        <a href="index.html#home" class="logo-link">
+            <img src="dwc_logo2.png" alt="Duque Workforce Connect Logo" class="nav-logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#benefits">Benefits</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="apply_now.html" class="btn head-btn2">Apply Now</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Apply Now Section -->
+
+
+    <section id="apply-now" style="padding-top: 160px;">
+        <div class="apply-container typeform-container" data-reveal>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <span class="eyebrow" style="justify-content:center;">Applicant Profile Questionnaire</span>
+                <h2>Apply Now</h2>
+                <p style="color: var(--text-muted);">Answer a few quick questions and our team will review your qualifications shortly.</p>
+            </div>
+
+            <div class="tf-progress">
+                <div class="tf-progress-bar" id="tfProgressBar"></div>
+            </div>
+            <div class="tf-step-indicator"><span id="tfStepCurrent">1</span> / <span id="tfStepTotal">14</span></div>
+
+            <form id="appForm" novalidate>
+
+                <!-- Step 1: Full Name -->
+                <div class="tf-step active" data-step="1">
+                    <!-- <span class="tf-step-num">01</span> -->
+                    <label class="tf-question" for="fullName">What's your full name?</label>
+                    <input type="text" id="fullName" class="tf-input" placeholder="Type your answer here...">
+                    <span class="tf-error" data-error-for="fullName">Please enter your full name.</span>
+                    <div class="tf-nav">
+                        <span></span>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Email -->
+                <div class="tf-step" data-step="2">
+                    <!-- <span class="tf-step-num">02</span> -->
+                    <label class="tf-question" for="email">What's your email address?</label>
+                    <input type="email" id="email" class="tf-input" placeholder="you@example.com">
+                    <span class="tf-error" data-error-for="email">Please enter a valid email address.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Phone -->
+                <div class="tf-step" data-step="3">
+                    <!-- <span class="tf-step-num">03</span> -->
+                    <label class="tf-question" for="phone">What's the best phone number to reach you?</label>
+                    <input type="tel" id="phone" class="tf-input" placeholder="(204) 000 0000">
+                    <span class="tf-error" data-error-for="phone">Please enter a phone number.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Highest Educational Attainment -->
+                <div class="tf-step" data-step="4">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">04</span> -->
+                    <label class="tf-question" for="education">What is your highest educational attainment?</label>
+                    <select id="education" class="tf-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option>Senior High School Graduate (New Curriculum)</option>
+                        <option>High School Graduate (Old Curriculum)</option>
+                        <option>Technical / Vocational Course Graduate (e.g., TESDA certified)</option>
+                        <option>College Undergraduate (Completed partial years / Associate Degree)</option>
+                        <option>Bachelor's Degree / College Graduate (e.g., BSIT, BSCS, BA, BS)</option>
+                        <option>Post-Graduate / Master's / Doctorate Degree</option>
+                    </select>
+                    <span class="tf-error" data-error-for="education">Please select an option.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Employment History (Industry) -->
+                <div class="tf-step" data-step="5">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">05</span> -->
+                    <label class="tf-question" for="employmentHistory">What has your employment history looked like over the past 10 years (industry)?</label>
+                    <input type="text" id="employmentHistory" class="tf-input" placeholder="e.g., Retail, Construction, Healthcare, Warehouse...">
+                    <span class="tf-error" data-error-for="employmentHistory">Please share your employment history.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Immigration History -->
+                <div class="tf-step" data-step="6">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">06</span> -->
+                    <label class="tf-question" for="immigrationHistory">What is your immigration history?</label>
+                    <select id="immigrationHistory" class="tf-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option>Citizen / National (No work restrictions)</option>
+                        <option>Permanent Resident (e.g., Dual Citizen, Permanent Resident Card/Visa)</option>
+                        <option>Valid Work Visa Holder (Currently possesses an active visa allowed to work)</option>
+                        <option>Student Visa Holder (With allowable or limited working hours)</option>
+                        <option>Requires Visa Sponsorship (Will need a company-sponsored visa to work legally)</option>
+                        <option>Other / Non-Resident</option>
+                    </select>
+                    <span class="tf-error" data-error-for="immigrationHistory">Please select an option.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 7: Position -->
+                <div class="tf-step" data-step="7">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">07</span> -->
+                    <label class="tf-question" for="position">Which role are you applying for?</label>
+                    <select id="position" class="tf-select">
+                        <option value="" disabled selected>Select a role</option>
+                        <option>Administrative &amp; Office Support</option>
+                        <option>Customer Service</option>
+                        <option>Skilled Trades</option>
+                        <option>Warehouse &amp; Logistics</option>
+                        <option>Hospitality</option>
+                        <option>Other</option>
+                    </select>
+                    <span class="tf-error" data-error-for="position">Please select a role.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 8: Employment Type -->
+                <div class="tf-step" data-step="8">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">08</span> -->
+                    <label class="tf-question" for="employmentType">What type of work are you looking for?</label>
+                    <select id="employmentType" class="tf-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option>Full-time</option>
+                        <option>Part-time</option>
+                        <option>Contract</option>
+                        <option>Seasonal</option>
+                    </select>
+                    <span class="tf-error" data-error-for="employmentType">Please select an option.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 9: Years of Experience -->
+                <div class="tf-step" data-step="9">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">09</span> -->
+                    <label class="tf-question" for="experience">How many years of relevant experience do you have?</label>
+                    <select id="experience" class="tf-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option>Less than 1 year</option>
+                        <option>1 - 3 years</option>
+                        <option>3 - 5 years</option>
+                        <option>5+ years</option>
+                    </select>
+                    <span class="tf-error" data-error-for="experience">Please select an option.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 10: Availability -->
+                <div class="tf-step" data-step="10">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">10</span> -->
+                    <label class="tf-question" for="availability">When are you available to start?</label>
+                    <select id="availability" class="tf-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option>Immediately</option>
+                        <option>Within 2 weeks</option>
+                        <option>1 month or more</option>
+                    </select>
+                    <span class="tf-error" data-error-for="availability">Please select an option.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 11: Referral Source -->
+                <div class="tf-step" data-step="11">
+                    <!-- <span class="tf-section-tag">Applicant Profile Questionnaire</span>
+                    <span class="tf-step-num">11</span> -->
+                    <label class="tf-question" for="referralSource">How did you hear about us?</label>
+                    <select id="referralSource" class="tf-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option>Referral</option>
+                        <option>Social Media</option>
+                        <option>Job Board</option>
+                        <option>Search Engine</option>
+                        <option>Other</option>
+                    </select>
+                    <span class="tf-error" data-error-for="referralSource">Please select an option.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 12: Cover Letter -->
+                <div class="tf-step" data-step="12">
+                    <!-- <span class="tf-step-num">12</span> -->
+                    <label class="tf-question" for="coverLetter">Tell us why you're a great fit (cover letter)</label>
+                    <span class="tf-hint">Maximum 500 words.</span>
+                    <textarea id="coverLetter" class="tf-textarea" placeholder="Type your cover letter here..."></textarea>
+                    <div class="tf-word-count"><span id="coverLetterCount">0</span> / 500 words</div>
+                    <span class="tf-error" data-error-for="coverLetter">Please write a short cover letter.</span>
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 13: Documents & Credentials -->
+                <div class="tf-step" data-step="13">
+                    <!-- <span class="tf-step-num">13</span> -->
+                    <label class="tf-question">Upload your documents &amp; credentials</label>
+                    <span class="tf-hint">Certifications, licenses, references, etc. Max 5MB per individual file.</span>
+
+                    <div class="tf-file-drop" id="docsUploadGroup" data-upload="documents">
+                        <i class="fa-solid fa-file-arrow-up"></i>
+                        <p><strong>Click to choose files</strong> or drag and drop here</p>
+                        <p class="upload-hint"><i class="fa-solid fa-circle-info"></i> PDF, JPG, or PNG &bull; 5MB max per file &bull; multiple files allowed</p>
+                        <input type="file" id="docsFileInput" accept="image/*,.pdf" multiple hidden>
+                    </div>
+
+                    <div class="tf-file-list" id="docsFileList"></div>
+                    <span class="tf-error" data-error-for="documents">Please upload at least one document.</span>
+
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 14: CV / Resume -->
+                <div class="tf-step" data-step="14">
+                    <!-- <span class="tf-step-num">14</span> -->
+                    <label class="tf-question">Upload your CV or Resume</label>
+                    <span class="tf-hint">Max 5MB per individual file.</span>
+
+                    <div class="tf-file-drop" id="cvUploadGroup" data-upload="cv">
+                        <i class="fa-solid fa-file-arrow-up"></i>
+                        <p><strong>Click to choose your CV/Resume</strong> or drag and drop here</p>
+                        <p class="upload-hint"><i class="fa-solid fa-circle-info"></i> PDF, JPG, or PNG &bull; 5MB max per file</p>
+                        <input type="file" id="cvFileInput" accept="image/*,.pdf" multiple hidden>
+                    </div>
+
+                    <div class="tf-file-list" id="cvFileList"></div>
+                    <span class="tf-error" data-error-for="cv">Please upload your CV or resume.</span>
+
+                    <p class="tf-hint" style="margin-top:20px;">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Make sure your CV/Resume is up-to-date and includes your most relevant experience.
+                        <!-- <strong>Correct</strong>. -->
+                    </p>
+
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="submit" class="btn" id="submitAppBtn">Submit Application <i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const steps = Array.from(document.querySelectorAll('.tf-step'));
+            const totalSteps = steps.length;
+            const progressBar = document.getElementById('tfProgressBar');
+            const stepCurrentEl = document.getElementById('tfStepCurrent');
+            document.getElementById('tfStepTotal').textContent = totalSteps;
+
+            let currentStep = 1;
+
+            function updateProgress() {
+                progressBar.style.width = (currentStep / totalSteps * 100) + '%';
+                stepCurrentEl.textContent = currentStep;
+            }
+
+            function showStep(stepNum) {
+                steps.forEach(step => {
+                    step.classList.toggle('active', parseInt(step.dataset.step, 10) === stepNum);
+                });
+                updateProgress();
+            }
+
+            function clearError(stepEl) {
+                const errorEl = stepEl.querySelector('.tf-error');
+                if (errorEl) errorEl.classList.remove('visible');
+                stepEl.querySelectorAll('.tf-input, .tf-select, .tf-textarea').forEach(el => el.classList.remove('invalid'));
+            }
+
+            function showError(stepEl) {
+                const errorEl = stepEl.querySelector('.tf-error');
+                if (errorEl) errorEl.classList.add('visible');
+                stepEl.querySelectorAll('.tf-input, .tf-select, .tf-textarea').forEach(el => el.classList.add('invalid'));
+            }
+
+            /* ---------------------------------------------- */
+            /* Multi-file uploaders (documents + CV), 5MB max   */
+            /* per individual file                               */
+            /* ---------------------------------------------- */
+            const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
+            function formatSize(bytes) {
+                if (bytes < 1024) return bytes + ' B';
+                if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+                return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+            }
+
+            function createUploader(dropEl, inputEl, listEl) {
+                const state = { files: [] };
+
+                function render() {
+                    listEl.innerHTML = '';
+                    state.files.forEach((file, idx) => {
+                        const item = document.createElement('div');
+                        item.className = 'tf-file-item';
+                        item.innerHTML = `
+                            <span><i class="fa-solid fa-file-lines"></i> ${file.name} <em>(${formatSize(file.size)})</em></span>
+                            <button type="button" class="remove-file" aria-label="Remove file" data-idx="${idx}"><i class="fa-solid fa-xmark"></i></button>
+                        `;
+                        listEl.appendChild(item);
+                    });
+                    listEl.querySelectorAll('.remove-file').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            state.files.splice(parseInt(btn.dataset.idx, 10), 1);
+                            render();
+                        });
+                    });
+                }
+
+                function addFiles(fileArray) {
+                    const oversized = [];
+                    fileArray.forEach(file => {
+                        if (file.size > MAX_FILE_SIZE) {
+                            oversized.push(file.name);
+                            return;
+                        }
+                        const alreadyAdded = state.files.some(f => f.name === file.name && f.size === file.size);
+                        if (!alreadyAdded) state.files.push(file);
+                    });
+
+                    if (oversized.length) {
+                        Swal.fire({
+                            title: 'File too large',
+                            text: `The following file(s) exceed the 5MB limit and were not added: ${oversized.join(', ')}`,
+                            icon: 'warning',
+                            confirmButtonColor: '#d00'
+                        });
+                    }
+                    render();
+                }
+
+                dropEl.addEventListener('click', () => inputEl.click());
+                inputEl.addEventListener('change', () => {
+                    addFiles(Array.from(inputEl.files));
+                    inputEl.value = '';
+                });
+                ['dragenter', 'dragover'].forEach(evt => {
+                    dropEl.addEventListener(evt, (e) => {
+                        e.preventDefault();
+                        dropEl.classList.add('drag-over');
+                    });
+                });
+                ['dragleave', 'drop'].forEach(evt => {
+                    dropEl.addEventListener(evt, (e) => {
+                        e.preventDefault();
+                        dropEl.classList.remove('drag-over');
+                    });
+                });
+                dropEl.addEventListener('drop', (e) => {
+                    if (e.dataTransfer.files.length) addFiles(Array.from(e.dataTransfer.files));
+                });
+
+                return {
+                    getFiles: () => state.files,
+                    reset: () => { state.files = []; render(); }
+                };
+            }
+
+            const documentsUploader = createUploader(
+                document.getElementById('docsUploadGroup'),
+                document.getElementById('docsFileInput'),
+                document.getElementById('docsFileList')
+            );
+            const cvUploader = createUploader(
+                document.getElementById('cvUploadGroup'),
+                document.getElementById('cvFileInput'),
+                document.getElementById('cvFileList')
+            );
+
+            /* ---------------------------------------------- */
+            /* Validation                                        */
+            /* ---------------------------------------------- */
+            function validateStep(stepEl) {
+                const fileDrop = stepEl.querySelector('.tf-file-drop');
+                if (fileDrop) {
+                    const key = fileDrop.dataset.upload;
+                    return key === 'documents' ? documentsUploader.getFiles().length > 0 : cvUploader.getFiles().length > 0;
+                }
+
+                const input = stepEl.querySelector('.tf-input, .tf-select, .tf-textarea');
+                if (!input) return true;
+
+                if (input.id === 'email') {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+                }
+                return input.value.trim().length > 0;
+            }
+
+            steps.forEach(stepEl => {
+                const nextBtn = stepEl.querySelector('.tf-next');
+                const backBtn = stepEl.querySelector('.tf-back');
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        if (!validateStep(stepEl)) {
+                            showError(stepEl);
+                            return;
+                        }
+                        clearError(stepEl);
+                        currentStep = Math.min(currentStep + 1, totalSteps);
+                        showStep(currentStep);
+                    });
+                }
+                if (backBtn) {
+                    backBtn.addEventListener('click', () => {
+                        currentStep = Math.max(currentStep - 1, 1);
+                        showStep(currentStep);
+                    });
+                }
+            });
+
+            // Allow "Enter" key to advance on single-line inputs
+            document.querySelectorAll('.tf-input, .tf-select').forEach(el => {
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const stepEl = el.closest('.tf-step');
+                        const nextBtn = stepEl.querySelector('.tf-next');
+                        if (nextBtn) nextBtn.click();
+                    }
+                });
+            });
+
+            showStep(currentStep);
+
+            /* ---------------------------------------------- */
+            /* Cover letter: 500 word max, live counter          */
+            /* ---------------------------------------------- */
+            const coverLetter = document.getElementById('coverLetter');
+            const coverLetterCount = document.getElementById('coverLetterCount');
+            const WORD_LIMIT = 500;
+
+            coverLetter.addEventListener('input', () => {
+                let words = coverLetter.value.trim().length ? coverLetter.value.trim().split(/\s+/) : [];
+                if (words.length > WORD_LIMIT) {
+                    words = words.slice(0, WORD_LIMIT);
+                    coverLetter.value = words.join(' ');
+                }
+                coverLetterCount.textContent = words.length;
+                coverLetterCount.parentElement.classList.toggle('limit-reached', words.length >= WORD_LIMIT);
+            });
+
+            /* ---------------------------------------------- */
+            /* Submit: bundle answers + all files into a ZIP    */
+            /* named after the applicant, then download it.     */
+            /* NOTE: a browser cannot write directly to a local  */
+            /* folder path (e.g. a Dropbox folder on disk) for   */
+            /* security reasons — this downloads a single ZIP    */
+            /* that the applicant (or staff) can drag into the   */
+            /* right Dropbox folder, or a synced Downloads folder*/
+            /* can pick it up automatically.                     */
+            /* ---------------------------------------------- */
+            const appForm = document.getElementById('appForm');
+            const submitBtn = document.getElementById('submitAppBtn');
+
+            function fieldValue(id) {
+                const el = document.getElementById(id);
+                return el ? el.value.trim() : '';
+            }
+
+            function sanitizeName(name) {
+                return name.replace(/[\\/:*?"<>|]+/g, '').replace(/\s+/g, '_').replace(/_+/g, '_') || 'Applicant';
+            }
+
+            appForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const lastStepEl = steps[steps.length - 1];
+                if (!validateStep(lastStepEl)) {
+                    showError(lastStepEl);
+                    return;
+                }
+
+                const fullName = fieldValue('fullName');
+                const folderName = sanitizeName(fullName);
+
+                const summary = [
+                    `Application Summary — ${fullName}`,
+                    `Submitted: ${new Date().toLocaleString()}`,
+                    '',
+                    `Full Name: ${fullName}`,
+                    `Email: ${fieldValue('email')}`,
+                    `Phone: ${fieldValue('phone')}`,
+                    `Highest Educational Attainment: ${fieldValue('education')}`,
+                    `Employment History (past 10 years, industry): ${fieldValue('employmentHistory')}`,
+                    `Immigration History: ${fieldValue('immigrationHistory')}`,
+                    `Role Applying For: ${fieldValue('position')}`,
+                    `Employment Type Sought: ${fieldValue('employmentType')}`,
+                    `Years of Relevant Experience: ${fieldValue('experience')}`,
+                    `Availability: ${fieldValue('availability')}`,
+                    `How They Heard About Us: ${fieldValue('referralSource')}`,
+                    '',
+                    'Cover Letter:',
+                    fieldValue('coverLetter')
+                ].join('\n');
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Preparing your application... <i class="fa-solid fa-spinner fa-spin"></i>';
+
+                const zip = new JSZip();
+                const folder = zip.folder(folderName);
+                folder.file('Application_Summary.txt', summary);
+
+                const docsFolder = folder.folder('Documents_Credentials');
+                documentsUploader.getFiles().forEach(f => docsFolder.file(f.name, f));
+
+                const cvFolder = folder.folder('CV_Resume');
+                cvUploader.getFiles().forEach(f => cvFolder.file(f.name, f));
+
+                zip.generateAsync({ type: 'blob' }).then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${folderName}_Application.zip`;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    URL.revokeObjectURL(url);
+
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submit Application <i class="fa-solid fa-paper-plane"></i>';
+
+                    Swal.fire({
+                        title: 'Application Sent!',
+                        html: `Thank you, ${fullName}. Please keep your lines open for an Interview call.<br><br>Our team will review your application and contact you if there are any questions.`,
+                        icon: 'success',
+                        confirmButtonColor: '#d00'
+                    });
+
+                    appForm.reset();
+                    documentsUploader.reset();
+                    cvUploader.reset();
+                    coverLetterCount.textContent = '0';
+                    currentStep = 1;
+                    showStep(currentStep);
+                }).catch(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submit Application <i class="fa-solid fa-paper-plane"></i>';
+                    Swal.fire({
+                        title: 'Something went wrong',
+                        text: 'We could not prepare your application file. Please try again.',
+                        icon: 'error',
+                        confirmButtonColor: '#d00'
+                    });
+                });
+            });
+        })();
+    </script>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="dwc_logo2.png" alt="Duque Workforce Connect Logo" class="footer-logo">
+                <p>Connecting reliable, skilled candidates with employers across a wide range of industries
+                    nationwide.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#benefits">Benefits</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="index.html#benefits">Career Placement</a>
+                <a href="index.html#benefits">Resume &amp; Interview Prep</a>
+                <a href="index.html#about">Employer Partnerships</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:+12043392522"><i class="fa-solid fa-phone" style="width:14px;"></i> (204) 339 2522</a>
+                <a href="mailto:info@duqueimmigration.ca"><i class="fa-solid fa-envelope" style="width:14px;"></i> info@duqueimmigration.ca</a>
+                <a href="index.html#contact"><i class="fa-solid fa-location-dot" style="width:14px;"></i> Winnipeg, Manitoba</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; <span id="currentYear"></span> Duque Workforce Connect. All rights reserved.</span>
+            <span><a href="index.html#home">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="index.html#home">Terms of Service</a></span>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

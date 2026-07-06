@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Runs immediately, before any other script. Only when this succeeds does
-         the CSS hide [data-reveal] sections for the fade-in effect — so a
-         blocked/broken/slow main.js can never leave content invisible. -->
     <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <!-- <link rel="stylesheet" href="apply_now.css"> -->
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/wet-boew/assets/favicon.ico">
 </head>
@@ -31,9 +27,8 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#benefits">Benefits</a>
-            <a href="#careers">Careers</a>
             <a href="#contact">Contact</a>
-            <a href="#apply-now" class="btn head-btn2">Apply Now</a>
+            <a href="apply_now.html" class="btn head-btn2">Apply Now</a>
         </div>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -47,22 +42,24 @@
         <div class="hero-bg bg-1"></div>
         <div class="hero-bg bg-2"></div>
         <div class="hero-bg bg-3"></div>
+        <div class="hero-bg bg-4"></div>
 
         <!-- Hero Content -->
         <div class="hero-content">
-            <span class="hero-eyebrow"><span class="dot"></span> Harvesting &bull; Farm &bull; Seasonal Careers</span>
+            <span class="hero-eyebrow"><span class="dot"></span> Recruitment &bull; Career Placement &bull; Workforce Solutions</span>
 
             <h1><span class="typewriter"></span><span class="cursor">|</span></h1>
 
             <!-- Engaging Subheadline -->
-            <p class="hero-subtext">We don't just find you a job, we get you into the field. Connect with fruit,
-                vegetable, and specialty crop farms across the country looking for reliable harvesting labourers.</p>
+            <p class="hero-subtext">We don't just find you a job, we find the right fit. Duque Workforce Connect
+                matches skilled, motivated candidates with employers across a wide range of industries, based on
+                the skills and experience you already bring to the table.</p>
 
             <div class="hero-cta-row">
-                <button class="btn hero-btn" onclick="document.getElementById('careers').scrollIntoView()"
-                    style="padding: 15px 40px; font-size: 1.05rem;">
-                    Explore Opportunities <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                <a class="btn hero-btn" href="apply_now.html"
+                    style="padding: 15px 40px; font-size: 1.05rem; text-decoration: none;">
+                    Start Your Application <i class="fa-solid fa-arrow-right"></i>
+                </a>
                 <button class="btn btn-ghost-gold" onclick="document.getElementById('about').scrollIntoView()"
                     style="padding: 15px 40px; font-size: 1.05rem;">
                     Learn About Us
@@ -93,10 +90,10 @@
     <script>
         // Array of 4 motivational sentences
         const phrases = [
-            "Your Harvest Season Starts Here.",
-            "Steady Work, Fair Pay.",
-            "Join Canada's Farms and Orchards.",
-            "Build Your Future in Agriculture."
+            "Your Next Career Starts Here.",
+            "Matched To Your Skills.",
+            "Real People, Real Opportunities.",
+            "Build Your Future With Us."
         ];
 
         let phraseIndex = 0;
@@ -150,28 +147,26 @@
         <div class="about-intro" data-reveal>
             <span class="eyebrow">Who We Are</span>
             <h2>About Duque Workforce Connect</h2>
-            <p>We believe that finding steady farm work should be a seamless experience. Duque Workforce Connect is
-                the premier gateway for harvesting labourers looking to join fruit, vegetable, and specialty crop
-                farms across the country. We specialize in connecting reliable, hard-working individuals with
-                growers and orchards, ensuring that your effort meets the right opportunity.</p>
+            <p>We believe that finding the right job — or the right candidate — should be a seamless experience.
+                Duque Workforce Connect is a trusted workforce agency dedicated to matching skilled, hard-working
+                individuals with employers who value their experience. Whatever your background, we work to connect
+                you with opportunities that fit your skills, your goals, and your schedule.</p>
         </div>
 
         <div class="about-details" data-reveal>
             <div class="about-copy">
                 <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
-                <p>To bridge the gap between reliable harvesting labourers and growers by providing tailored farm
-                    placement solutions that foster steady income, fair treatment, and long-term working
-                    relationships.</p>
+                <p>To bridge the gap between talented job seekers and growing businesses by providing personalized
+                    placement solutions that lead to steady income, meaningful work, and long-term career growth.</p>
 
                 <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
-                <p>To be the most trusted workforce catalyst in the agriculture sector, transforming the way fruit,
-                    vegetable, and specialty crop farms find dependable harvest labour through integrity, dedication,
-                    and honest matching.</p>
+                <p>To be the most trusted workforce partner in every community we serve, transforming how people find
+                    work and how companies find talent through integrity, dedication, and honest matching.</p>
             </div>
 
             <div class="about-media">
-                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1000"
-                    alt="Harvesting labourer carrying a crate of freshly picked produce">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000"
+                    alt="Recruiter meeting with a job candidate">
             </div>
         </div>
 
@@ -179,7 +174,7 @@
         <div class="stats-band" data-reveal>
             <div class="stat-item">
                 <span class="num" data-count="500" data-suffix="+">0</span>
-                <span class="label">Careers Launched</span>
+                <span class="label">Candidates Placed</span>
             </div>
             <div class="stat-item">
                 <span class="num" data-count="50" data-suffix="+">0</span>
@@ -229,10 +224,10 @@
         <!-- Introduction Section -->
         <div class="section-head" data-reveal>
             <span class="eyebrow">Why Join Us</span>
-            <h2>Perks That Support Every Harvest</h2>
-            <p>We provide more than just job listings; we provide steady, seasonal, and long-term work you can count
-                on. Partnering with Duque Workforce Connect unlocks perks designed to support your income, your
-                safety, and your well-being on the farm.</p>
+            <h2>Support At Every Step</h2>
+            <p>We provide more than just job listings; we provide guidance, resources, and long-term career support.
+                Partnering with Duque Workforce Connect unlocks perks designed to help you land the right role and
+                thrive once you're there.</p>
         </div>
 
         <!-- Card Grid Layout -->
@@ -240,60 +235,65 @@
             <!-- Card 1 -->
             <div class="hover-card">
                 <div class="card-media">
-                    <img src="https://images.unsplash.com/photo-1607554338726-f8881a9a7f9e?q=80&w=500" alt="Steady Farm Placements">
-                    <div class="card-badge"><i class="fa-solid fa-tractor"></i></div>
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=500" alt="Personalized job matching">
+                    <div class="card-badge"><i class="fa-solid fa-magnifying-glass"></i></div>
                 </div>
                 <div class="card-body">
-                    <h3>Steady Placements</h3>
-                    <p>Gain direct access to fruit, vegetable, and specialty crop farms hiring across the growing and harvest seasons.</p>
+                    <h3>Personalized Job Matching</h3>
+                    <p>We take the time to understand your skills and experience so we can match you with roles that
+                        are the right fit — not just any opening.</p>
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="hover-card">
                 <div class="card-media">
-                    <img src="https://images.unsplash.com/photo-1611740192940-0e390d409397?q=80&w=500" alt="On the Job Training">
-                    <div class="card-badge"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=500" alt="Resume and interview support">
+                    <div class="card-badge"><i class="fa-solid fa-file-signature"></i></div>
                 </div>
                 <div class="card-body">
-                    <h3>On-the-Job Training</h3>
-                    <p>No formal education or prior experience required — get hands-on training in planting, picking, sorting, and packing.</p>
+                    <h3>Resume &amp; Interview Support</h3>
+                    <p>Get help polishing your resume and preparing for interviews so you can put your best foot
+                        forward with every employer.</p>
                 </div>
             </div>
 
             <!-- Card 3 -->
             <div class="hover-card">
                 <div class="card-media">
-                    <img src="https://images.unsplash.com/photo-1609075916355-cb02b783347e?q=80&w=500" alt="Accommodation Support">
-                    <div class="card-badge"><i class="fa-solid fa-house-chimney"></i></div>
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=500" alt="Placements across diverse industries">
+                    <div class="card-badge"><i class="fa-solid fa-building"></i></div>
                 </div>
                 <div class="card-body">
-                    <h3>Accommodation Support</h3>
-                    <p>Many of our partner farms offer on-site or nearby housing and transportation assistance for the season.</p>
+                    <h3>Diverse Industries</h3>
+                    <p>From administrative and customer service to skilled trades, logistics, and hospitality — we
+                        place candidates across a wide range of sectors.</p>
                 </div>
             </div>
 
             <!-- Card 4 -->
             <div class="hover-card">
                 <div class="card-media">
-                    <img src="https://images.unsplash.com/photo-1626984232613-f20f15589bee?q=80&w=500" alt="Safety Equipment Provided">
-                    <div class="card-badge"><i class="fa-solid fa-vest"></i></div>
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=500" alt="Flexible and full-time roles">
+                    <div class="card-badge"><i class="fa-solid fa-calendar-check"></i></div>
                 </div>
                 <div class="card-body">
-                    <h3>Safety First</h3>
-                    <p>Protective gear, proper equipment, and clear safety briefings so you can work outdoors with confidence.</p>
+                    <h3>Flexible &amp; Full-Time Roles</h3>
+                    <p>Whether you're looking for full-time, part-time, contract, or seasonal work, we help you find
+                        opportunities that fit your schedule.</p>
                 </div>
             </div>
 
             <!-- Card 5 -->
             <div class="hover-card">
                 <div class="card-media">
-                    <img src="https://images.unsplash.com/photo-1543747053-002e0d064454?q=80&w=500" alt="Community Support">
+                    <img src="https://images.unsplash.com/photo-1543747053-002e0d064454?q=80&w=500" alt="Community support for job seekers">
                     <div class="card-badge"><i class="fa-solid fa-people-group"></i></div>
                 </div>
                 <div class="card-body">
                     <h3>Community Support</h3>
-                    <p>Join a network of harvesting labourers for mentorship, peer support, and guidance throughout the season.</p>
+                    <p>Join a network of job seekers for mentorship, peer support, and guidance throughout your
+                        career journey.</p>
                 </div>
             </div>
         </div>
@@ -302,212 +302,15 @@
         <div class="benefit-cta" data-reveal>
             <div class="benefit-cta-copy">
                 <h3>Your Success is Our Priority</h3>
-                <p>Beyond placing you on a farm, we are committed to ensuring you thrive there.
-                    From day one to season's end, our team is here to support your work.</p>
-                <a href="#apply-now" class="btn" style="display: inline-block; text-decoration: none;">View Open Roles <i class="fa-solid fa-arrow-right"></i></a>
+                <p>Beyond placing you in a role, we are committed to helping you grow. From your first day to your
+                    next promotion, our team is here to support your career.</p>
+                <a href="apply_now.html" class="btn" style="display: inline-block; text-decoration: none;">Start Your Application <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="benefit-cta-media">
-                <img src="https://images.unsplash.com/photo-1626984232603-cc32cf514a83?q=80&w=1000" alt="Harvesting labourer with freshly picked produce">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1000" alt="Team celebrating a successful placement">
             </div>
         </div>
     </section>
-
-    <!-- Careers Section -->
-
-    <section id="careers" class="careers-board">
-        <!-- Header -->
-        <div class="section-head" data-reveal>
-            <span class="eyebrow">Open Roles</span>
-            <h2>Explore Your Path</h2>
-            <p>Discover our latest openings for harvesting labourers on fruit, vegetable, and specialty crop farms.</p>
-        </div>
-
-        <div class="careers-toolbar" data-reveal>
-            <div class="careers-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="jobSearchInput" placeholder="Search job titles, farms, or keywords...">
-            </div>
-            <span class="careers-count"><strong id="jobCount">4</strong> open positions</span>
-        </div>
-
-        <div class="board-container" data-reveal>
-            <!-- Fixed-width, centered job listings (no sidebar filters) -->
-            <div class="job-list" id="jobList">
-                <!-- Job Card 1 -->
-                <div class="job-card-list">
-                    <div class="job-avatar">DF</div>
-                    <div class="job-card-body">
-                        <h3>Harvesting Labourer</h3>
-                        <p class="company-name">Duque Farms &amp; Orchards &bull; Winnipeg, MB (On-site)</p>
-                        <div class="job-tags">
-                            <span class="tag salary">$17.00 - $19.50 an hour</span>
-                            <span class="tag type">Full-time</span>
-                            <span class="tag urgent"><i class="fa-solid fa-bolt"></i> Urgently hiring</span>
-                        </div>
-                        <ul class="job-snippets">
-                            <li><strong>Duties:</strong> Plant, thin, and harvest fruit and vegetable crops.</li>
-                            <li>Sort, weigh, and pack produce; assist with soil prep and irrigation.</li>
-                        </ul>
-
-                        <div class="job-actions">
-                            <button class="btn btn-outline"
-                                onclick="openJobModal('Harvesting Labourer', 'Duque Farms &amp; Orchards')">View</button>
-                            <button class="btn">Apply</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job Card 2 -->
-                <div class="job-card-list">
-                    <div class="job-avatar">GV</div>
-                    <div class="job-card-body">
-                        <h3>Orchard Picker / Fruit Farm Labourer</h3>
-                        <p class="company-name">Green Valley Orchards &bull; Niagara-on-the-Lake, ON (On-site)</p>
-                        <div class="job-tags">
-                            <span class="tag salary">$17.50 - $20.00 an hour</span>
-                            <span class="tag type">Seasonal &bull; Full-time</span>
-                        </div>
-                        <ul class="job-snippets">
-                            <li><strong>Focus:</strong> Picking row and orchard fruit crops by hand.</li>
-                            <li>Load, unload, and transfer crates and produce for transport.</li>
-                        </ul>
-
-                        <div class="job-actions">
-                            <button class="btn btn-outline"
-                                onclick="openJobModal('Orchard Picker / Fruit Farm Labourer', 'Green Valley Orchards')">View</button>
-                            <button class="btn">Apply</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job Card 3 -->
-                <div class="job-card-list">
-                    <div class="job-avatar">PF</div>
-                    <div class="job-card-body">
-                        <h3>Vegetable Farm Labourer</h3>
-                        <p class="company-name">Prairie Fresh Produce &bull; Portage la Prairie, MB (On-site)</p>
-                        <div class="job-tags">
-                            <span class="tag salary">$16.75 - $18.50 an hour</span>
-                            <span class="tag type">Full-time</span>
-                        </div>
-                        <ul class="job-snippets">
-                            <li><strong>Duties:</strong> Prepare and irrigate soil; plant and fertilize crops.</li>
-                            <li>Clean up racks, trays, and harvest bins in the packing area.</li>
-                        </ul>
-
-                        <div class="job-actions">
-                            <button class="btn btn-outline"
-                                onclick="openJobModal('Vegetable Farm Labourer', 'Prairie Fresh Produce')">View</button>
-                            <button class="btn">Apply</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job Card 4 -->
-                <div class="job-card-list">
-                    <div class="job-avatar">SH</div>
-                    <div class="job-card-body">
-                        <h3>Farm Packing &amp; Sorting Labourer</h3>
-                        <p class="company-name">Sunrise Harvest Co. &bull; Winnipeg, MB (On-site)</p>
-                        <div class="job-tags">
-                            <span class="tag salary">$16.50 - $18.00 an hour</span>
-                            <span class="tag type">Part-time &bull; Full-time</span>
-                        </div>
-                        <ul class="job-snippets">
-                            <li><strong>Focus:</strong> Sort, weigh, and pack fruit and vegetables at the farm.</li>
-                            <li>Write daily progress reports of inventory harvested.</li>
-                        </ul>
-
-                        <div class="job-actions">
-                            <button class="btn btn-outline"
-                                onclick="openJobModal('Farm Packing &amp; Sorting Labourer', 'Sunrise Harvest Co.')">View</button>
-                            <button class="btn">Apply</button>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="no-jobs-message" id="noJobsMessage">No positions match your search. Try a different keyword.</p>
-            </div>
-            <!-- /.job-list -->
-        </div>
-        <!-- /.board-container -->
-
-        <!-- Side Modal Overlay (kept outside any [data-reveal] ancestor — a CSS
-             transform on an ancestor would turn position:fixed into relative-to-that-ancestor
-             instead of the viewport, making the modal appear open/misplaced on load) -->
-        <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
-
-        <!-- Right-Side Sliding Modal -->
-        <div id="job-modal" class="side-modal">
-            <div class="modal-header">
-                <h3 id="modal-title">Job Title</h3>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
-            </div>
-
-            <div class="modal-body">
-                <p id="modal-company" class="company-name" style="font-weight: 600; font-size: 1.1rem;">Company
-                    Name</p>
-
-                <h4><i class="fa-solid fa-gift"></i> Job Offer & Benefits</h4>
-                <ul class="job-snippets">
-                    <li>Competitive hourly wage with overtime during peak harvest.</li>
-                    <li>On-site or nearby accommodation and transportation assistance where available.</li>
-                    <li>On-the-job training provided — no prior experience necessary.</li>
-                    <li>Protective gear and equipment supplied.</li>
-                </ul>
-
-                <h4><i class="fa-solid fa-clipboard-check"></i> Requirements</h4>
-                <ul class="job-snippets">
-                    <li>Ability to perform repetitive physical tasks: bending, kneeling, and standing for extended periods.</li>
-                    <li>Comfortable working outdoors in a variety of weather conditions.</li>
-                    <li>Able to lift, carry, and transfer crates and produce.</li>
-                    <li>Reliable, punctual, and able to work well as part of a team.</li>
-                </ul>
-
-                <h4><i class="fa-solid fa-graduation-cap"></i> Qualifications</h4>
-                <ul class="job-snippets">
-                    <li>No specific education or training requirements.</li>
-                    <li>Previous farm or harvest experience is an asset but not required.</li>
-                    <li>Must be legally eligible to work in Canada.</li>
-                </ul>
-            </div>
-
-            <div class="modal-footer">
-                <button class="btn" style="width: 100%;">Apply for this Job</button>
-            </div>
-        </div>
-
-        <!-- Pro Tip Button -->
-        <div class="pro-tip">
-            <button class="btn"
-                style="width: fit-content; padding: 15px 40px; font-size: 1.05rem;"
-                onclick="swal('Pro Tip', 'Tailor your resume for every job application to highlight relevant skills!', 'info')">
-                <i class="fa-regular fa-lightbulb"></i> View Expert Advice
-            </button>
-        </div>
-    </section>
-
-    <script>
-        // Function to open the modal and dynamically change the title/company
-        function openJobModal(jobTitle, companyName) {
-            // Update the modal text
-            document.getElementById('modal-title').innerText = jobTitle;
-            document.getElementById('modal-company').innerText = companyName;
-
-            // Slide the modal in and show overlay
-            document.getElementById('modal-overlay').classList.add('active');
-            document.getElementById('job-modal').classList.add('active');
-
-            // Note: background page stays scrollable on purpose while the
-            // modal is open (the modal panel itself scrolls independently).
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById('modal-overlay').classList.remove('active');
-            document.getElementById('job-modal').classList.remove('active');
-        }
-    </script>
 
     <!-- Contact Section -->
 
@@ -613,117 +416,13 @@
         </div>
     </section>
 
-    <!-- Apply Now Section -->
-
-    <section id="apply-now">
-        <div class="apply-container" data-reveal>
-
-            <div style="text-align: center; margin-bottom: 30px;">
-                <span class="eyebrow" style="justify-content:center;">Take The Next Step</span>
-                <h2>Apply Now</h2>
-                <p style="color: var(--text-muted);">Fill out the form below and our team will review your qualifications shortly.</p>
-            </div>
-
-            <form id="appForm">
-                <div class="floating-label-group">
-                    <input type="text" id="fullName" class="floating-input" placeholder=" " required>
-                    <label class="floating-label" for="fullName">Full Name</label>
-                </div>
-
-                <div class="floating-label-group">
-                    <input type="email" id="email" class="floating-input" placeholder=" " required>
-                    <label class="floating-label" for="email">Email Address</label>
-                </div>
-
-                <div class="floating-label-group">
-                    <input type="tel" id="phone" class="floating-input" placeholder=" " required>
-                    <label class="floating-label" for="phone">Phone Number</label>
-                </div>
-
-                <div class="file-upload-group" id="uploadGroup">
-                    <label><i class="fa-solid fa-file-arrow-up"></i> Upload Resume (PDF or Image)</label>
-                    <input type="file" id="resumeFile" accept="image/*,.pdf" onchange="previewFile()" required>
-                    <p class="upload-hint"><i class="fa-solid fa-circle-info"></i> Max file size 10MB &bull; PDF, JPG, or PNG</p>
-
-                    <div id="preview-container" style="margin-top: 15px; display: none;">
-                        <img id="resume-preview"
-                            style="display: none; max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;"
-                            alt="Preview">
-                        <p id="pdf-preview-text" style="display: none; color: var(--primary); font-weight: 600;"><i class="fa-solid fa-file-pdf"></i>
-                            PDF Document Selected</p>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn"
-                    style="width: 100%; margin-top: 20px; padding: 15px; font-size: 1.05rem;">Submit Application <i class="fa-solid fa-paper-plane"></i></button>
-            </form>
-        </div>
-    </section>
-
-    <script>
-        function previewFile() {
-            const file = document.getElementById('resumeFile').files[0];
-            const previewContainer = document.getElementById('preview-container');
-            const imagePreview = document.getElementById('resume-preview');
-            const pdfPreview = document.getElementById('pdf-preview-text');
-
-            // Show the container once a file is selected
-            if (file) {
-                previewContainer.style.display = 'block';
-
-                // If it's an image, show the image preview
-                if (file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        imagePreview.src = e.target.result;
-                        imagePreview.style.display = 'block';
-                        pdfPreview.style.display = 'none';
-                    }
-                    reader.readAsDataURL(file);
-                }
-                // If it's a PDF, show a nice text confirmation
-                else if (file.type === 'application/pdf') {
-                    imagePreview.style.display = 'none';
-                    pdfPreview.style.display = 'block';
-                }
-            } else {
-                // Hide if user cancels file selection
-                previewContainer.style.display = 'none';
-            }
-        }
-    </script>
-
-
-    <script>
-        function previewFile() {
-            const preview = document.getElementById('resume-preview');
-            const file = document.getElementById('resumeFile').files[0];
-            if (file && file.type.startsWith('image/')) {
-                preview.style.display = 'block';
-                preview.src = URL.createObjectURL(file);
-            }
-        }
-
-        document.getElementById('appForm').onsubmit = function (e) {
-            e.preventDefault();
-            Swal.fire({
-                title: 'Application Sent!',
-                text: 'Thank you. Our team will review your qualifications shortly.',
-                icon: 'success',
-                confirmButtonColor: '#d00'
-            });
-            e.target.reset();
-            document.getElementById('preview-container').style.display = 'none';
-        };
-    </script>
-
     <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
                 <img src="dwc_logo2.png" alt="Duque Workforce Connect Logo" class="footer-logo">
-                <p>Connecting reliable harvesting labourers with fruit, vegetable, and specialty crop farms across
-                    the country.</p>
+                <p>Connecting reliable, skilled candidates with employers across a wide range of industries
+                    nationwide.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -736,14 +435,14 @@
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#benefits">Benefits</a>
-                <a href="#careers">Careers</a>
+                <a href="#contact">Contact</a>
             </div>
 
             <div class="footer-col">
-                <h4>Industries</h4>
-                <a href="#careers">Harvesting & Crop Labour</a>
-                <a href="#careers">Orchard & Fruit Picking</a>
-                <a href="#careers">Farm Packing & Sorting</a>
+                <h4>Services</h4>
+                <a href="#benefits">Career Placement</a>
+                <a href="#benefits">Resume &amp; Interview Prep</a>
+                <a href="#about">Employer Partnerships</a>
             </div>
 
             <div class="footer-col">

@@ -164,38 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* -------------------------------------------------- */
-    /* Careers search: filter job cards by title, company,  */
-    /* or keywords found in the tags / snippets              */
-    /* -------------------------------------------------- */
-    const jobSearchInput = document.getElementById('jobSearchInput');
-    const jobList = document.getElementById('jobList');
-    const jobCountEl = document.getElementById('jobCount');
-    const noJobsMessage = document.getElementById('noJobsMessage');
-
-    if (jobSearchInput && jobList) {
-        const jobCards = Array.from(jobList.querySelectorAll('.job-card-list'));
-
-        const filterJobs = () => {
-            const query = jobSearchInput.value.trim().toLowerCase();
-            let visibleCount = 0;
-
-            jobCards.forEach(card => {
-                const haystack = card.textContent.toLowerCase();
-                const matches = query === '' || haystack.includes(query);
-                card.classList.toggle('is-hidden', !matches);
-                if (matches) visibleCount++;
-            });
-
-            if (jobCountEl) jobCountEl.textContent = visibleCount;
-            if (noJobsMessage) noJobsMessage.classList.toggle('visible', visibleCount === 0);
-        };
-
-        jobSearchInput.addEventListener('input', filterJobs);
-        // Run once on load in case the field is pre-filled (e.g. browser autofill)
-        filterJobs();
-    }
-
-    /* -------------------------------------------------- */
     /* Footer year                                          */
     /* -------------------------------------------------- */
     const yearEl = document.getElementById('currentYear');

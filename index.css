@@ -490,18 +490,24 @@ h2 {
 }
 
 .bg-1 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1626906722163-bd4c03cb3b9b?q=80&w=2070');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 0s;
 }
 
 .bg-2 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1633555487350-1dd1d289c1cd?q=80&w=2070');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1698047682091-782b1e5c6536?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 6s;
 }
 
 .bg-3 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1572908721147-0a9eb395762d?q=80&w=2070');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 12s;
+}
+
+.bg-4 {
+    /* Theme: A professional recruiter presenting real career opportunities to candidate streams */
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1492681290082-e932832941e6?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    animation-delay: 18s; /* Continues the 6-second pattern sequential delay */
 }
 
 @keyframes bgFade {
@@ -1341,6 +1347,274 @@ input[type="file"] {
     margin: 12px 0 0;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
+}
+
+/* ==========================================================================
+   Apply Now — Typeform-style wizard
+   ========================================================================== */
+
+.typeform-container {
+    max-width: 680px;
+}
+
+.tf-progress {
+    height: 6px;
+    width: 100%;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.tf-progress-bar {
+    height: 100%;
+    width: 10%;
+    background: linear-gradient(90deg, var(--primary), var(--gold));
+    border-radius: 4px;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tf-step-indicator {
+    text-align: right;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 30px;
+}
+
+.tf-step {
+    display: none;
+}
+
+.tf-step.active {
+    display: block;
+    animation: tfFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tfFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tf-section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201, 154, 46, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.tf-step-num {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+}
+
+.tf-question {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.3;
+    margin-bottom: 22px;
+}
+
+.tf-hint {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin: -14px 0 18px;
+}
+
+.tf-input,
+.tf-select {
+    width: 100%;
+    padding: 14px 4px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    color: var(--dark);
+    border: none;
+    border-bottom: 2.5px solid #cbd5e1;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s;
+    border-radius: 0;
+}
+
+.tf-input:focus,
+.tf-select:focus {
+    border-bottom-color: var(--primary);
+}
+
+.tf-input.invalid,
+.tf-select.invalid,
+.tf-textarea.invalid {
+    border-color: var(--primary);
+}
+
+.tf-select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    padding-right: 34px;
+}
+
+.tf-textarea {
+    width: 100%;
+    min-height: 260px;
+    padding: 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--dark);
+    line-height: 1.7;
+    resize: vertical;
+    border: 1.5px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.tf-textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(221, 0, 0, 0.08);
+}
+
+.tf-word-count {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+.tf-word-count.limit-reached {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.tf-error {
+    display: none;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.tf-error.visible {
+    display: block;
+}
+
+.tf-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.tf-file-drop {
+    border: 2px dashed #cbd5e1;
+    border-radius: var(--radius-md);
+    padding: 34px 20px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--light);
+    transition: border-color 0.25s, background 0.25s;
+}
+
+.tf-file-drop:hover,
+.tf-file-drop.drag-over {
+    border-color: var(--primary);
+    background: #fff5f5;
+}
+
+.tf-file-drop i {
+    font-size: 1.8rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tf-file-drop p {
+    margin: 4px 0;
+    color: var(--dark);
+    font-size: 0.92rem;
+}
+
+.tf-file-drop .upload-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.tf-file-drop .upload-hint i {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--gold);
+}
+
+.tf-file-list {
+    margin-top: 16px;
+    text-align: left;
+}
+
+.tf-file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+    color: var(--dark);
+}
+
+.tf-file-item em {
+    color: var(--text-muted);
+    font-style: normal;
+}
+
+.tf-file-item .remove-file {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1;
+    padding: 4px;
+}
+
+.tf-file-item .remove-file:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 480px) {
+    .tf-question { font-size: 1.2rem; }
+    .tf-nav { flex-direction: column-reverse; align-items: stretch; }
+    .tf-nav .btn, .tf-nav .btn-outline { width: 100%; text-align: center; }
 }
 
 /* ==========================================================================
