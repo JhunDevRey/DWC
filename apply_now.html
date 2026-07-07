@@ -28,7 +28,7 @@
         <div class="nav-links" id="navLinks">
             <a href="index.html#home">Home</a>
             <a href="index.html#about">About</a>
-            <a href="index.html#benefits">Benefits</a>
+            <a href="index.html#steps">Steps</a>
             <a href="index.html#contact">Contact</a>
             <a href="apply_now.html" class="btn head-btn2">Apply Now</a>
         </div>
@@ -84,8 +84,8 @@
                 <div class="tf-step" data-step="3">
                     <!-- <span class="tf-step-num">03</span> -->
                     <label class="tf-question" for="phone">What's the best phone number to reach you?</label>
-                    <input type="tel" id="phone" class="tf-input" placeholder="(204) 000 0000">
-                    <span class="tf-error" data-error-for="phone">Please enter a phone number.</span>
+                    <input type="tel" id="phone" class="tf-input" placeholder="(204) 000 0000" inputmode="tel" pattern="[0-9+\-() .]*">
+                    <span class="tf-error" data-error-for="phone">Please enter a valid phone number (numbers and + - ( ) . only).</span>
                     <div class="tf-nav">
                         <button type="button" class="btn-outline tf-back">Back</button>
                         <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
@@ -466,6 +466,18 @@
         });
 
             /* ---------------------------------------------- */
+            /* Step 3: Phone — numbers and phone punctuation    */
+            /* only (no letters)                                */
+            /* ---------------------------------------------- */
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', () => {
+                    const cleaned = phoneInput.value.replace(/[^0-9+\-() .]/g, '');
+                    if (cleaned !== phoneInput.value) phoneInput.value = cleaned;
+                });
+            }
+
+            /* ---------------------------------------------- */
             /* Step 7: Immigration History conditional fields   */
             /* ---------------------------------------------- */
             const immigrationHistorySelect = document.getElementById('immigrationHistory');
@@ -719,6 +731,10 @@ const cvUploader = createUploader(
                 if (input.id === 'email') {
                     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
                 }
+                if (input.id === 'phone') {
+                    const val = input.value.trim();
+                    return /^[0-9+\-() .]+$/.test(val) && /\d/.test(val);
+                }
                 return input.value.trim().length > 0;
             }
 
@@ -896,15 +912,15 @@ const cvUploader = createUploader(
                 <h4>Navigate</h4>
                 <a href="index.html#home">Home</a>
                 <a href="index.html#about">About</a>
-                <a href="index.html#benefits">Benefits</a>
+                <a href="index.html#steps">Steps</a>
                 <a href="index.html#contact">Contact</a>
                 <a href="/apply_now.html">Apply Now</a>
             </div>
 
             <div class="footer-col">
                 <h4>Services</h4>
-                <a href="index.html#benefits">Career Placement</a>
-                <a href="index.html#benefits">Resume &amp; Interview Prep</a>
+                <a href="index.html#steps">Career Placement</a>
+                <a href="index.html#steps">Resume &amp; Interview Prep</a>
                 <a href="index.html#about">Employer Partnerships</a>
             </div>
 

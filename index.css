@@ -350,8 +350,8 @@ h2 {
     margin-bottom: 1rem;
 }
 
-#about, #benefits, #careers {
-    padding: 130px 10%;
+#about, #steps, #careers {
+    padding: 3% 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -490,24 +490,23 @@ h2 {
 }
 
 .bg-1 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1530025809667-1f4bcff8e60f?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 0s;
 }
 
 .bg-2 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1698047682091-782b1e5c6536?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 6s;
 }
 
 .bg-3 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1562364692-16836a8b9b08?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 12s;
 }
 
 .bg-4 {
-    /* Theme: A professional recruiter presenting real career opportunities to candidate streams */
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1492681290082-e932832941e6?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    animation-delay: 18s; /* Continues the 6-second pattern sequential delay */
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1568568756062-7ba6d2d4ac57?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    animation-delay: 18s;
 }
 
 @keyframes bgFade {
