@@ -99,11 +99,11 @@
                     <label class="tf-question" for="education">What is your highest educational attainment?</label>
                     <select id="education" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
-                        <option>Senior High School Graduate (New Curriculum)</option>
-                        <option>High School Graduate (Old Curriculum)</option>
-                        <option>Technical / Vocational Course Graduate (e.g., TESDA certified)</option>
-                        <option>College Undergraduate (Completed partial years / Associate Degree)</option>
-                        <option>Bachelor's Degree / College Graduate (e.g., BSIT, BSCS, BA, BS)</option>
+                        <option>High School Graduate (10 Years of Secondary)</option>
+                        <option>Senior High School Graduate (12 Years of Secondary)</option>
+                        <option>Technical / Vocational Course Graduate</option>
+                        <option>College Undergraduate (Post-Secondary)</option>
+                        <option>Bachelor's Degree / College Graduate</option>
                         <option>Post-Graduate / Master's / Doctorate Degree</option>
                     </select>
                     <span class="tf-error" data-error-for="education">Please select an option.</span>
@@ -160,12 +160,11 @@
                 <!-- Step 6: Previous Position -->
                 <div class="tf-step" data-step="6">
                     <label class="tf-question" for="position">What was your previous role?</label>
-                    
-                    <select id="position" class="tf-select">
-                        <!-- Keep only this placeholder; JS completely populates the rest -->
+                    <input type="text" id="position" class="tf-input" placeholder="Type your answer here...">
+                    <!-- <select id="position" class="tf-select">
                         <option value="" disabled selected>Select a role</option>
-                    </select>
-                    <span class="tf-error" data-error-for="position">Please select a role.</span>
+                    </select> -->
+                    <span class="tf-error" data-error-for="position">Please enter your previous role.</span>
                     
                     <div class="tf-nav">
                         <button type="button" class="btn-outline tf-back">Back</button>
@@ -175,25 +174,87 @@
 
                 <!-- Step 7: Immigration History -->
                 <div class="tf-step" data-step="7">
-                    <label class="tf-question" for="immigrationHistory">What is your immigration history?</label>
+                    <label class="tf-question" for="immigrationHistory">Have you applied to come or work to another country other than your country of citizenship?</label>
                     <select id="immigrationHistory" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
-                        <option>Citizen / National (No work restrictions)</option>
-                        <option>Permanent Resident (e.g., Dual Citizen, Permanent Resident Card/Visa)</option>
-                        <option>Valid Work Visa Holder (Currently possesses an active visa allowed to work)</option>
-                        <option>Student Visa Holder (With allowable or limited working hours)</option>
-                        <option>Requires Visa Sponsorship (Will need a company-sponsored visa to work legally)</option>
-                        <option>Other / Non-Resident</option>
+                        <option aria-placeholder="Please select ">Yes</option>
+                        <option>No</option>
                     </select>
-                    <span class="tf-error" data-error-for="immigrationHistory">Please select an option.</span>
+                    <span class="tf-error" data-error-for="immigrationHistory">Please enter your answer.</span>
+
+                    <!-- Conditional follow-up fields, shown only when "Yes" is selected above -->
+                    <div id="immigrationDetails" class="tf-subfields tf-subfields-hidden">
+                        <label class="tf-question" for="immigrationCountry">What country?</label>
+                        <select id="immigrationCountry" class="tf-select">
+                            <option value="" disabled selected>Select a country</option>
+                        </select>
+                        <span class="tf-error" data-error-for="immigrationCountry">Please select a country.</span>
+
+                        <label class="tf-question" for="immigrationVisaType">What type of visa application?</label>
+                        <select id="immigrationVisaType" class="tf-select">
+                            <option value="" disabled selected>Select an option</option>
+                            <option>Non-Immigrant Visas (Temporary Stays)</option>
+                            <option>Immigrant Visas (Permanent Residency)</option>
+                        </select>
+                        <span class="tf-error" data-error-for="immigrationVisaType">Please select an option.</span>
+
+                        <label class="tf-question" for="immigrationDate">What date did you apply?</label>
+                        <input type="date" id="immigrationDate" class="tf-input">
+                        <span class="tf-error" data-error-for="immigrationDate">Please select a date.</span>
+
+                        <label class="tf-question" for="immigrationResult">What are the results?</label>
+                        <select id="immigrationResult" class="tf-select">
+                            <option value="" disabled selected>Select an option</option>
+                            <option>Approved</option>
+                            <option>Refused</option>
+                            <option>In process</option>
+                        </select>
+                        <span class="tf-error" data-error-for="immigrationResult">Please select an option.</span>
+                    </div>
+
                     <div class="tf-nav">
                         <button type="button" class="btn-outline tf-back">Back</button>
                         <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
 
-                <!-- Step 8: Years of Experience -->
+                <!-- Step 8: English Test -->
                 <div class="tf-step" data-step="8">
+                    <label class="tf-question" for="englishTest">Have you taken any English test for the purpose of immigration (e.g. IELTS, CELPIP, PTE Core, etc.)?</label>
+                    <select id="englishTest" class="tf-select">
+                        <option value="" disabled selected>Select an option</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                    <span class="tf-error" data-error-for="englishTest">Please enter your answer.</span>
+
+                    <!-- Conditional follow-up fields, shown only when "Yes" is selected above -->
+                    <div id="englishTestDetails" class="tf-subfields tf-subfields-hidden">
+                        <label class="tf-question" for="englishListeningScore">What is your score on listening?</label>
+                        <input type="text" id="englishListeningScore" class="tf-input" placeholder="Type your score here...">
+                        <span class="tf-error" data-error-for="englishListeningScore">Please enter your listening score.</span>
+
+                        <label class="tf-question" for="englishReadingScore">What is your score on reading?</label>
+                        <input type="text" id="englishReadingScore" class="tf-input" placeholder="Type your score here...">
+                        <span class="tf-error" data-error-for="englishReadingScore">Please enter your reading score.</span>
+
+                        <label class="tf-question" for="englishSpeakingScore">What is your score on speaking?</label>
+                        <input type="text" id="englishSpeakingScore" class="tf-input" placeholder="Type your score here...">
+                        <span class="tf-error" data-error-for="englishSpeakingScore">Please enter your speaking score.</span>
+
+                        <label class="tf-question" for="englishTestDate">When did you take it?</label>
+                        <input type="date" id="englishTestDate" class="tf-input">
+                        <span class="tf-error" data-error-for="englishTestDate">Please select a date.</span>
+                    </div>
+
+                    <div class="tf-nav">
+                        <button type="button" class="btn-outline tf-back">Back</button>
+                        <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 9: Years of Experience -->
+                <div class="tf-step" data-step="9">
                     <label class="tf-question" for="experience">How many years of relevant experience do you have?</label>
                     <select id="experience" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
@@ -209,8 +270,8 @@
                     </div>
                 </div>
 
-                <!-- Step 9: Availability -->
-                <div class="tf-step" data-step="9">
+                <!-- Step 10: Availability -->
+                <div class="tf-step" data-step="10">
                     <label class="tf-question" for="availability">When are you available to start?</label>
                     <select id="availability" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
@@ -225,8 +286,8 @@
                     </div>
                 </div>
 
-                <!-- Step 10: Referral Source -->
-                <div class="tf-step" data-step="10">
+                <!-- Step 11: Referral Source -->
+                <div class="tf-step" data-step="11">
                     <label class="tf-question" for="referralSource">How did you hear about us?</label>
                     <select id="referralSource" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
@@ -243,9 +304,9 @@
                     </div>
                 </div>
 
-                <!-- Step 11: Documents & Credentials -->
-                <div class="tf-step" data-step="11">
-                    <!-- <span class="tf-step-num">11</span> -->
+                <!-- Step 12: Documents & Credentials -->
+                <div class="tf-step" data-step="12">
+                    <!-- <span class="tf-step-num">12</span> -->
                     <label class="tf-question">Upload your documents &amp; credentials</label>
                     <span class="tf-hint">Certifications, licenses, references, TOR, diplomas, etc. Max 5MB per individual file.</span>
 
@@ -265,8 +326,8 @@
                     </div>
                 </div>
 
-                <!-- Step 12: CV / Resume -->
-                <div class="tf-step" data-step="12">
+                <!-- Step 13: CV / Resume -->
+                <div class="tf-step" data-step="13">
                     <label class="tf-question">Upload your CV or Resume</label>
                     <span class="tf-hint">Max 5MB per individual file.</span>
 
@@ -318,15 +379,21 @@
             }
 
             function clearError(stepEl) {
-                const errorEl = stepEl.querySelector('.tf-error');
-                if (errorEl) errorEl.classList.remove('visible');
+                stepEl.querySelectorAll('.tf-error').forEach(el => el.classList.remove('visible'));
                 stepEl.querySelectorAll('.tf-input, .tf-select, .tf-textarea').forEach(el => el.classList.remove('invalid'));
             }
 
             function showError(stepEl) {
-                const errorEl = stepEl.querySelector('.tf-error');
-                if (errorEl) errorEl.classList.add('visible');
-                stepEl.querySelectorAll('.tf-input, .tf-select, .tf-textarea').forEach(el => el.classList.add('invalid'));
+                // Skip anything sitting inside a hidden conditional group (e.g. Step 7's
+                // Yes-only follow-up fields when "No" is selected)
+                stepEl.querySelectorAll('.tf-error').forEach(errorEl => {
+                    if (errorEl.closest('.tf-subfields-hidden')) return;
+                    errorEl.classList.add('visible');
+                });
+                stepEl.querySelectorAll('.tf-input, .tf-select, .tf-textarea').forEach(el => {
+                    if (el.closest('.tf-subfields-hidden')) return;
+                    el.classList.add('invalid');
+                });
             }
 
             // Update positions based on selected industry
@@ -342,38 +409,38 @@
             }
 
             // Direct data map extracted from your reference chart
-            const jobRolesData = {
-                "Agriculture": ["Farmer", "Rancher", "Agricultural Technician"],
-                "Construction": ["Carpenter", "Electrician", "Plumber", "Civil Engineer"],
-                "Manufacturing": ["Factory Worker", "Machine Operator", "Quality Inspector"],
-                "Healthcare": ["Doctor", "Nurse", "Pharmacist", "Medical Assistant"],
-                "Education": ["Teacher", "Professor", "School Administrator"],
-                "Technology": ["Software Developer", "Network Engineer", "Cybersecurity Analyst"],
-                "Finance": ["Accountant", "Financial Analyst", "Banker", "Auditor"],
-                "Retail": ["Sales Associate", "Store Manager", "Cashier"],
-                "Hospitality": ["Hotel Manager", "Chef", "Tour Guide", "Event Planner"],
-                "Transportation": ["Truck Driver", "Pilot", "Warehouse Manager", "Supply Chain Coordinator"],
-                "Government": ["Police Officer", "Firefighter", "Public Administrator"],
-                "Legal": ["Lawyer", "Paralegal", "Judge", "Legal Assistant"],
-                "Engineering": ["Mechanical Engineer", "Electrical Engineer", "Civil Engineer"],
-                "Science": ["Scientist", "Laboratory Technician", "Research Analyst"],
-                "Media": ["Journalist", "Actor", "Video Editor", "Producer"],
-                "Marketing": ["Marketing Manager", "Graphic Designer", "Social Media Specialist"],
-                "Telecommunications": ["Network Technician", "Telecommunications Engineer"],
-                "Energy": ["Electrician", "Power Plant Operator", "Renewable Energy Technician"],
-                "RealEstate": ["Real Estate Agent", "Property Manager", "Appraiser"],
-                "Insurance": ["Insurance Agent", "Claims Adjuster", "Underwriter"],
-                "HumanResources": ["Recruiter", "HR Manager", "Training Specialist"],
-                "Customer Service": ["Customer Support Representative", "Call Center Agent"],
-                "Nonprofit": ["Program Coordinator", "Fundraiser", "Volunteer Manager"],
-                "ArtsDesign": ["Graphic Designer", "Fashion Designer", "Illustrator"],
-                "Mining": ["Miner", "Geologist", "Environmental Engineer"],
-                "FoodBeverage": ["Baker", "Restaurant Manager", "Food Scientist"],
-                "Automotive": ["Auto Mechanic", "Automotive Engineer", "Service Advisor"],
-                "Aerospace": ["Aircraft Mechanic", "Pilot", "Aerospace Engineer"],
-                "Biotechnology": ["Biochemist", "Pharmaceutical Sales Representative", "Research Scientist"],
-                "Environmental": ["Environmental Consultant", "Conservation Officer", "Sustainability Specialist"]
-            };
+            // const jobRolesData = {
+            //     "Agriculture": ["Farmer", "Rancher", "Agricultural Technician"],
+            //     "Construction": ["Carpenter", "Electrician", "Plumber", "Civil Engineer"],
+            //     "Manufacturing": ["Factory Worker", "Machine Operator", "Quality Inspector"],
+            //     "Healthcare": ["Doctor", "Nurse", "Pharmacist", "Medical Assistant"],
+            //     "Education": ["Teacher", "Professor", "School Administrator"],
+            //     "Technology": ["Software Developer", "Network Engineer", "Cybersecurity Analyst"],
+            //     "Finance": ["Accountant", "Financial Analyst", "Banker", "Auditor"],
+            //     "Retail": ["Sales Associate", "Store Manager", "Cashier"],
+            //     "Hospitality": ["Hotel Manager", "Chef", "Tour Guide", "Event Planner"],
+            //     "Transportation": ["Truck Driver", "Pilot", "Warehouse Manager", "Supply Chain Coordinator"],
+            //     "Government": ["Police Officer", "Firefighter", "Public Administrator"],
+            //     "Legal": ["Lawyer", "Paralegal", "Judge", "Legal Assistant"],
+            //     "Engineering": ["Mechanical Engineer", "Electrical Engineer", "Civil Engineer"],
+            //     "Science": ["Scientist", "Laboratory Technician", "Research Analyst"],
+            //     "Media": ["Journalist", "Actor", "Video Editor", "Producer"],
+            //     "Marketing": ["Marketing Manager", "Graphic Designer", "Social Media Specialist"],
+            //     "Telecommunications": ["Network Technician", "Telecommunications Engineer"],
+            //     "Energy": ["Electrician", "Power Plant Operator", "Renewable Energy Technician"],
+            //     "RealEstate": ["Real Estate Agent", "Property Manager", "Appraiser"],
+            //     "Insurance": ["Insurance Agent", "Claims Adjuster", "Underwriter"],
+            //     "HumanResources": ["Recruiter", "HR Manager", "Training Specialist"],
+            //     "Customer Service": ["Customer Support Representative", "Call Center Agent"],
+            //     "Nonprofit": ["Program Coordinator", "Fundraiser", "Volunteer Manager"],
+            //     "ArtsDesign": ["Graphic Designer", "Fashion Designer", "Illustrator"],
+            //     "Mining": ["Miner", "Geologist", "Environmental Engineer"],
+            //     "FoodBeverage": ["Baker", "Restaurant Manager", "Food Scientist"],
+            //     "Automotive": ["Auto Mechanic", "Automotive Engineer", "Service Advisor"],
+            //     "Aerospace": ["Aircraft Mechanic", "Pilot", "Aerospace Engineer"],
+            //     "Biotechnology": ["Biochemist", "Pharmaceutical Sales Representative", "Research Scientist"],
+            //     "Environmental": ["Environmental Consultant", "Conservation Officer", "Sustainability Specialist"]
+            // };
 
             // Listen for the change directly on the element
             industrySelect.addEventListener('change', function() {
@@ -397,6 +464,102 @@
                 }
             });
         });
+
+            /* ---------------------------------------------- */
+            /* Step 7: Immigration History conditional fields   */
+            /* ---------------------------------------------- */
+            const immigrationHistorySelect = document.getElementById('immigrationHistory');
+            const immigrationDetails = document.getElementById('immigrationDetails');
+            const immigrationCountrySelect = document.getElementById('immigrationCountry');
+
+            const countryList = [
+                "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
+                "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
+                "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
+                "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria",
+                "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
+                "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
+                "Congo (Republic of the)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia",
+                "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica",
+                "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
+                "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
+                "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala",
+                "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland",
+                "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica",
+                "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait",
+                "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
+                "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia",
+                "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius",
+                "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco",
+                "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands",
+                "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia",
+                "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea",
+                "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania",
+                "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+                "Saint Vincent and the Grenadines", "Samoa", "San Marino",
+                "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
+                "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
+                "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka",
+                "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan",
+                "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago",
+                "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine",
+                "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
+                "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen",
+                "Zambia", "Zimbabwe"
+            ];
+
+            if (immigrationCountrySelect) {
+                countryList.forEach(country => {
+                    const opt = document.createElement('option');
+                    opt.value = country;
+                    opt.textContent = country;
+                    immigrationCountrySelect.appendChild(opt);
+                });
+            }
+
+            function toggleImmigrationDetails() {
+                if (!immigrationHistorySelect || !immigrationDetails) return;
+                const isYes = immigrationHistorySelect.value === 'Yes';
+                immigrationDetails.classList.toggle('tf-subfields-hidden', !isYes);
+                if (!isYes) {
+                    // Reset and clear any errors on the hidden follow-up fields
+                    immigrationDetails.querySelectorAll('.tf-input, .tf-select').forEach(el => {
+                        el.value = '';
+                        el.classList.remove('invalid');
+                    });
+                    immigrationDetails.querySelectorAll('.tf-error').forEach(el => el.classList.remove('visible'));
+                }
+            }
+
+            if (immigrationHistorySelect) {
+                immigrationHistorySelect.addEventListener('change', toggleImmigrationDetails);
+                toggleImmigrationDetails();
+            }
+
+            /* ---------------------------------------------- */
+            /* Step 8: English Test conditional fields          */
+            /* ---------------------------------------------- */
+            const englishTestSelect = document.getElementById('englishTest');
+            const englishTestDetails = document.getElementById('englishTestDetails');
+
+            function toggleEnglishTestDetails() {
+                if (!englishTestSelect || !englishTestDetails) return;
+                const isYes = englishTestSelect.value === 'Yes';
+                englishTestDetails.classList.toggle('tf-subfields-hidden', !isYes);
+                if (!isYes) {
+                    // Reset and clear any errors on the hidden follow-up fields
+                    englishTestDetails.querySelectorAll('.tf-input, .tf-select').forEach(el => {
+                        el.value = '';
+                        el.classList.remove('invalid');
+                    });
+                    englishTestDetails.querySelectorAll('.tf-error').forEach(el => el.classList.remove('visible'));
+                }
+            }
+
+            if (englishTestSelect) {
+                englishTestSelect.addEventListener('change', toggleEnglishTestDetails);
+                toggleEnglishTestDetails();
+            }
 
             /* ---------------------------------------------- */
             /* Multi-file uploaders (documents + CV), 5MB max   */
@@ -528,6 +691,28 @@ const cvUploader = createUploader(
                     return key === 'documents' ? documentsUploader.getFiles().length > 0 : cvUploader.getFiles().length > 0;
                 }
 
+                // Step 7 special case: immigration history + its Yes-only follow-up fields
+                if (stepEl.dataset.step === '7') {
+                    const historyVal = immigrationHistorySelect ? immigrationHistorySelect.value.trim() : '';
+                    if (!historyVal) return false;
+                    if (historyVal === 'Yes' && immigrationDetails) {
+                        const subInputs = immigrationDetails.querySelectorAll('.tf-input, .tf-select');
+                        return Array.from(subInputs).every(el => el.value.trim().length > 0);
+                    }
+                    return true;
+                }
+
+                // Step 8 special case: English test + its Yes-only follow-up fields
+                if (stepEl.dataset.step === '8') {
+                    const testVal = englishTestSelect ? englishTestSelect.value.trim() : '';
+                    if (!testVal) return false;
+                    if (testVal === 'Yes' && englishTestDetails) {
+                        const subInputs = englishTestDetails.querySelectorAll('.tf-input, .tf-select');
+                        return Array.from(subInputs).every(el => el.value.trim().length > 0);
+                    }
+                    return true;
+                }
+
                 const input = stepEl.querySelector('.tf-input, .tf-select, .tf-textarea');
                 if (!input) return true;
 
@@ -598,7 +783,7 @@ const cvUploader = createUploader(
                 const fullName = fieldValue('fullName');
                 const folderName = sanitizeName(fullName);
 
-                const summary = [
+                const summaryLines = [
                     `Application Summary — ${fullName}`,
                     `Submitted: ${new Date().toLocaleString()}`,
                     '',
@@ -609,11 +794,36 @@ const cvUploader = createUploader(
                     `Employment History (past 10 years, industry): ${fieldValue('employmentHistory')}`,
                     `Previous Position: ${fieldValue('position')}`,
                     `Immigration History: ${fieldValue('immigrationHistory')}`,
+                ];
+
+                if (fieldValue('immigrationHistory') === 'Yes') {
+                    summaryLines.push(
+                        `  Country Applied To: ${fieldValue('immigrationCountry')}`,
+                        `  Visa Application Type: ${fieldValue('immigrationVisaType')}`,
+                        `  Date Applied: ${fieldValue('immigrationDate')}`,
+                        `  Application Result: ${fieldValue('immigrationResult')}`
+                    );
+                }
+
+                summaryLines.push(`English Test Taken: ${fieldValue('englishTest')}`);
+
+                if (fieldValue('englishTest') === 'Yes') {
+                    summaryLines.push(
+                        `  Listening Score: ${fieldValue('englishListeningScore')}`,
+                        `  Reading Score: ${fieldValue('englishReadingScore')}`,
+                        `  Speaking Score: ${fieldValue('englishSpeakingScore')}`,
+                        `  Date Taken: ${fieldValue('englishTestDate')}`
+                    );
+                }
+
+                summaryLines.push(
                     `Years of Relevant Experience: ${fieldValue('experience')}`,
                     `Availability: ${fieldValue('availability')}`,
                     `How They Heard About Us: ${fieldValue('referralSource')}`,
-                    '',
-                ].join('\n');
+                    ''
+                );
+
+                const summary = summaryLines.join('\n');
 
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Preparing your application... <i class="fa-solid fa-spinner fa-spin"></i>';

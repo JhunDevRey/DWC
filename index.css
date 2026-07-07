@@ -1522,6 +1522,31 @@ input[type="file"] {
     display: block;
 }
 
+/* Step 7: conditional "Yes" follow-up fields (country, visa type, date, result) */
+.tf-subfields {
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1.5px solid #e2e8f0;
+}
+
+.tf-subfields-hidden {
+    display: none;
+}
+
+.tf-subfields .tf-question {
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+}
+
+.tf-subfields .tf-select,
+.tf-subfields .tf-input {
+    margin-bottom: 8px;
+}
+
+.tf-subfields .tf-error {
+    margin-bottom: 22px;
+}
+
 .tf-nav {
     display: flex;
     align-items: center;
