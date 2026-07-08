@@ -220,3 +220,10 @@ window.addEventListener('error', () => {
       e.preventDefault();
     }
   });
+
+// Disable dragging for all images on the website
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
