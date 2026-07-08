@@ -68,7 +68,15 @@ body {
     user-select: none;         /* Standard */
 }
 
-img, svg { max-width: 100%; height: auto; }
+img, svg {
+   max-width: 100%;
+   height: auto;
+   -webkit-user-drag: none;  /* Safari and Chrome */
+   -khtml-user-drag: none;   /* Konqueror HTML */
+   -moz-user-drag: none;     /* Firefox */
+   -o-user-drag: none;       /* Opera */
+   user-drag: none;          /* Standard */
+}
 
 h1, h2, h3, h4 {
     font-family: var(--font-display);
