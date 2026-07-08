@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8">
@@ -8,13 +7,16 @@
     <title>Apply Now | Duque Workforce Connect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" type="image/x-icon" href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/wet-boew/assets/favicon.ico">
+    <link rel="icon" type="image/x-icon"
+        href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/wet-boew/assets/favicon.ico">
 </head>
 
 <body>
@@ -46,7 +48,8 @@
             <div style="text-align: center; margin-bottom: 30px;">
                 <span class="eyebrow" style="justify-content:center;">Applicant Profile Questionnaire</span>
                 <h2>Apply Now</h2>
-                <p style="color: var(--text-muted);">Answer a few quick questions and our team will review your qualifications shortly.</p>
+                <p style="color: var(--text-muted);">Answer a few quick questions and our team will review your
+                    qualifications shortly.</p>
             </div>
 
             <div class="tf-progress">
@@ -84,8 +87,10 @@
                 <div class="tf-step" data-step="3">
                     <!-- <span class="tf-step-num">03</span> -->
                     <label class="tf-question" for="phone">What's the best phone number to reach you?</label>
-                    <input type="tel" id="phone" class="tf-input" placeholder="(204) 000 0000" inputmode="tel" pattern="[0-9+\-() .]*">
-                    <span class="tf-error" data-error-for="phone">Please enter a valid phone number (numbers and + - ( ) . only).</span>
+                    <input type="tel" id="phone" class="tf-input" placeholder="(204) 000 0000" inputmode="tel"
+                        pattern="[0-9+\-() .]*">
+                    <span class="tf-error" data-error-for="phone">Please enter a valid phone number (numbers and + - ( )
+                        . only).</span>
                     <div class="tf-nav">
                         <button type="button" class="btn-outline tf-back">Back</button>
                         <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
@@ -115,8 +120,9 @@
 
                 <!-- Step 5: Employment History (Industry) -->
                 <div class="tf-step" data-step="5">
-                    <label class="tf-question" for="employmentHistory">What has your employment history looked like over the past 10 years (industry)?</label>
-                    <select id="employmentHistory" class="tf-select" onchange="updatePositions()">
+                    <label class="tf-question" for="employmentHistory">What has your employment history looked like over
+                        the past 10 years (industry)?</label>
+                    <select id="employmentHistory" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
                         <option value="Agriculture">Agriculture</option>
                         <option value="Construction">Construction</option>
@@ -149,8 +155,9 @@
                         <option value="Biotechnology">Biotechnology & Pharmaceuticals</option>
                         <option value="Environmental">Environmental Services</option>
                     </select>
-                    <span class="tf-error" data-error-for="employmentHistory">Please share your employment history.</span>
-                    
+                    <span class="tf-error" data-error-for="employmentHistory">Please share your employment
+                        history.</span>
+
                     <div class="tf-nav">
                         <button type="button" class="btn-outline tf-back">Back</button>
                         <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
@@ -165,7 +172,7 @@
                         <option value="" disabled selected>Select a role</option>
                     </select> -->
                     <span class="tf-error" data-error-for="position">Please enter your previous role.</span>
-                    
+
                     <div class="tf-nav">
                         <button type="button" class="btn-outline tf-back">Back</button>
                         <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
@@ -174,73 +181,103 @@
 
                 <!-- Step 7: Immigration History -->
                 <div class="tf-step" data-step="7">
-                    <label class="tf-question" for="immigrationHistory">Have you applied to come or work to another country other than your country of citizenship?</label>
+                    <label class="tf-question" for="immigrationHistory">Have you applied to come or work to another
+                        country other than your country of citizenship?</label>
                     <select id="immigrationHistory" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
-                        <option aria-placeholder="Please select ">Yes</option>
-                        <option>No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                     <span class="tf-error" data-error-for="immigrationHistory">Please enter your answer.</span>
 
-                    <!-- Conditional follow-up fields, shown only when "Yes" is selected above -->
-                    <div id="immigrationDetails" class="tf-subfields tf-subfields-hidden">
-                        <label class="tf-question" for="immigrationCountry">What country?</label>
-                        <select id="immigrationCountry" class="tf-select">
-                            <option value="" disabled selected>Select a country</option>
-                        </select>
-                        <span class="tf-error" data-error-for="immigrationCountry">Please select a country.</span>
+                    <!-- Master wrapper for dynamic immigration subfields -->
+                    <div id="immigrationDetails" class="tf-subfields tf-subfields-hidden" style="margin-top: 20px;">
 
-                        <label class="tf-question" for="immigrationVisaType">What type of visa application?</label>
-                        <select id="immigrationVisaType" class="tf-select">
-                            <option value="" disabled selected>Select an option</option>
-                            <option>Non-Immigrant Visas (Temporary Stays)</option>
-                            <option>Immigrant Visas (Permanent Residency)</option>
-                        </select>
-                        <span class="tf-error" data-error-for="immigrationVisaType">Please select an option.</span>
+                        <!-- Injection container where entries will accumulate -->
+                        <div id="immigrationEntriesContainer">
+                            <!-- Initial Entry Row -->
+                            <div class="immigration-entry"
+                                style="padding-bottom: 20px; margin-bottom: 20px; position: relative;">
+                                <label class="tf-question">What country?</label>
+                                <select class="tf-select immigration-country">
+                                    <option value="" disabled selected>Select a country</option>
+                                </select>
+                                <span class="tf-error" data-error-for="immigrationCountry">Please select a
+                                    country.</span>
 
-                        <label class="tf-question" for="immigrationDate">What date did you apply?</label>
-                        <input type="date" id="immigrationDate" class="tf-input">
-                        <span class="tf-error" data-error-for="immigrationDate">Please select a date.</span>
+                                <label class="tf-question">What type of visa application?</label>
+                                <select class="tf-select immigration-visa-type">
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Non-Immigrant">Non-Immigrant Visas (Temporary Stays)</option>
+                                    <option value="Immigrant">Immigrant Visas (Permanent Residency)</option>
+                                </select>
+                                <span class="tf-error" data-error-for="immigrationVisaType">Please select an
+                                    option.</span>
 
-                        <label class="tf-question" for="immigrationResult">What are the results?</label>
-                        <select id="immigrationResult" class="tf-select">
-                            <option value="" disabled selected>Select an option</option>
-                            <option>Approved</option>
-                            <option>Refused</option>
-                            <option>In process</option>
-                        </select>
-                        <span class="tf-error" data-error-for="immigrationResult">Please select an option.</span>
+                                <label class="tf-question">What date did you apply?</label>
+                                <input type="date" class="tf-input immigration-date">
+                                <span class="tf-error" data-error-for="immigrationDate">Please select a date.</span>
+
+                                <label class="tf-question">What are the results?</label>
+                                <select class="tf-select immigration-result">
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Approved">Approved</option>
+                                    <option value="Refused">Refused</option>
+                                    <option value="In process">In process</option>
+                                </select>
+                                <span class="tf-error" data-error-for="immigrationResult">Please select an
+                                    option.</span>
+                            </div>
+                        </div>
+
+                        <!-- Add More Control Trigger -->
+                        <button type="button" id="addMoreImmigration" class="btn-outline"
+                            style="width: auto; padding: 8px 16px; margin-top: 10px; font-size: 0.95rem; cursor: pointer;">
+                            <i class="fa-solid fa-plus"></i> Add Another Country
+                        </button>
                     </div>
 
-                    <div class="tf-nav">
+                    <div class="tf-nav" style="margin-top: 30px;">
                         <button type="button" class="btn-outline tf-back">Back</button>
                         <button type="button" class="btn tf-next">Next <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
-
                 <!-- Step 8: English Test -->
                 <div class="tf-step" data-step="8">
-                    <label class="tf-question" for="englishTest">Have you taken any English test for the purpose of immigration (e.g. IELTS, CELPIP, PTE Core, etc.)?</label>
+                    <label class="tf-question" for="englishTest">Have you taken any English test for the purpose of
+                        immigration (e.g. IELTS, CELPIP, PTE Core, etc.)?</label>
                     <select id="englishTest" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
-                    <span class="tf-error" data-error-for="englishTest">Please enter your answer.</span>
+                    <!-- <span class="tf-error" data-error-for="englishTest">Please enter your answer.</span> -->
 
                     <!-- Conditional follow-up fields, shown only when "Yes" is selected above -->
                     <div id="englishTestDetails" class="tf-subfields tf-subfields-hidden">
                         <label class="tf-question" for="englishListeningScore">What is your score on listening?</label>
-                        <input type="text" id="englishListeningScore" class="tf-input" placeholder="Type your score here...">
-                        <span class="tf-error" data-error-for="englishListeningScore">Please enter your listening score.</span>
+                        <input type="text" id="englishListeningScore" class="tf-input"
+                            placeholder="Type your score here...">
+                        <span class="tf-error" data-error-for="englishListeningScore">Please enter your listening
+                            score.</span>
+
+                        <label class="tf-question" for="englishWritingScore">What is your score on writing?</label>
+                        <input type="text" id="englishWritingScore" class="tf-input"
+                            placeholder="Type your score here...">
+                        <span class="tf-error" data-error-for="englishWritingScore">Please enter your writing
+                            score.</span>
 
                         <label class="tf-question" for="englishReadingScore">What is your score on reading?</label>
-                        <input type="text" id="englishReadingScore" class="tf-input" placeholder="Type your score here...">
-                        <span class="tf-error" data-error-for="englishReadingScore">Please enter your reading score.</span>
+                        <input type="text" id="englishReadingScore" class="tf-input"
+                            placeholder="Type your score here...">
+                        <span class="tf-error" data-error-for="englishReadingScore">Please enter your reading
+                            score.</span>
 
                         <label class="tf-question" for="englishSpeakingScore">What is your score on speaking?</label>
-                        <input type="text" id="englishSpeakingScore" class="tf-input" placeholder="Type your score here...">
-                        <span class="tf-error" data-error-for="englishSpeakingScore">Please enter your speaking score.</span>
+                        <input type="text" id="englishSpeakingScore" class="tf-input"
+                            placeholder="Type your score here...">
+                        <span class="tf-error" data-error-for="englishSpeakingScore">Please enter your speaking
+                            score.</span>
 
                         <label class="tf-question" for="englishTestDate">When did you take it?</label>
                         <input type="date" id="englishTestDate" class="tf-input">
@@ -255,7 +292,8 @@
 
                 <!-- Step 9: Years of Experience -->
                 <div class="tf-step" data-step="9">
-                    <label class="tf-question" for="experience">How many years of relevant experience do you have?</label>
+                    <label class="tf-question" for="experience">How many years of relevant experience do you
+                        have?</label>
                     <select id="experience" class="tf-select">
                         <option value="" disabled selected>Select an option</option>
                         <option>Less than 1 year</option>
@@ -308,12 +346,14 @@
                 <div class="tf-step" data-step="12">
                     <!-- <span class="tf-step-num">12</span> -->
                     <label class="tf-question">Upload your documents &amp; credentials</label>
-                    <span class="tf-hint">Certifications, licenses, references, TOR, diplomas, etc. Max 5MB per individual file.</span>
+                    <span class="tf-hint">Certifications, licenses, references, TOR, diplomas, etc. Max 5MB per
+                        individual file.</span>
 
                     <div class="tf-file-drop" id="docsUploadGroup" data-upload="documents">
                         <i class="fa-solid fa-file-arrow-up"></i>
                         <p><strong>Click to choose files</strong> or drag and drop here</p>
-                        <p class="upload-hint"><i class="fa-solid fa-circle-info"></i> PDF, JPG, or PNG &bull; 5MB max per file &bull; multiple files allowed</p>
+                        <p class="upload-hint"><i class="fa-solid fa-circle-info"></i> PDF, JPG, or PNG &bull; 5MB max
+                            per file &bull; multiple files allowed</p>
                         <input type="file" id="docsFileInput" accept="image/*,.pdf" multiple hidden>
                     </div>
 
@@ -334,12 +374,17 @@
                     <div class="tf-file-drop" id="cvUploadGroup" data-upload="cv">
                         <i class="fa-solid fa-file-arrow-up"></i>
                         <p><strong>Click to choose your CV/Resume</strong> or drag and drop here</p>
-                        <p class="upload-hint"><i class="fa-solid fa-circle-info"></i> PDF or DOCX &bull; 5MB max per file</p>
-                        <input type="file" id="cvFileInput" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+                        <p class="upload-hint"><i class="fa-solid fa-circle-info"></i> PDF or DOCX &bull; 5MB max per
+                            file</p>
+                        <input type="file" id="cvFileInput"
+                            accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            hidden>
                     </div>
 
                     <div class="tf-file-list" id="cvFileList"></div>
-                    <span class="tf-error" data-error-for="cv" style="display: none; color: #dc2626; font-size: 0.9rem; margin-top: 5px;">Please upload your CV or resume.</span>
+                    <span class="tf-error" data-error-for="cv"
+                        style="display: none; color: #dc2626; font-size: 0.9rem; margin-top: 5px;">Please upload your CV
+                        or resume.</span>
 
                     <p class="tf-hint" style="margin-top:20px;">
                         <i class="fa-solid fa-circle-info"></i>
@@ -348,7 +393,8 @@
 
                     <div class="tf-nav">
                         <button type="button" class="btn-outline tf-back">Back</button>
-                        <button type="submit" class="btn" id="submitAppBtn">Submit Application <i class="fa-solid fa-paper-plane"></i></button>
+                        <button type="submit" class="btn" id="submitAppBtn">Submit Application <i
+                                class="fa-solid fa-paper-plane"></i></button>
                     </div>
                 </div>
 
@@ -398,72 +444,72 @@
 
             // Update positions based on selected industry
 
-            document.addEventListener('DOMContentLoaded', function() {
-            const industrySelect = document.getElementById('employmentHistory');
-            const positionSelect = document.getElementById('position');
+            // document.addEventListener('DOMContentLoaded', function () {
+                // const industrySelect = document.getElementById('employmentHistory');
+                // const positionSelect = document.getElementById('position');
 
-            // Prevent execution errors if the elements aren't rendered yet
-            if (!industrySelect || !positionSelect) {
-                console.error(" Duque Workforce App: Required dropdown elements were not found in the DOM.");
-                return;
-            }
+                // Prevent execution errors if the elements aren't rendered yet
+                // if (!industrySelect || !positionSelect) {
+                    // // console.error(" Duque Workforce App: Required dropdown elements were not found in the DOM.");
+                    // return;
+                // }
 
-            // Direct data map extracted from your reference chart
-            // const jobRolesData = {
-            //     "Agriculture": ["Farmer", "Rancher", "Agricultural Technician"],
-            //     "Construction": ["Carpenter", "Electrician", "Plumber", "Civil Engineer"],
-            //     "Manufacturing": ["Factory Worker", "Machine Operator", "Quality Inspector"],
-            //     "Healthcare": ["Doctor", "Nurse", "Pharmacist", "Medical Assistant"],
-            //     "Education": ["Teacher", "Professor", "School Administrator"],
-            //     "Technology": ["Software Developer", "Network Engineer", "Cybersecurity Analyst"],
-            //     "Finance": ["Accountant", "Financial Analyst", "Banker", "Auditor"],
-            //     "Retail": ["Sales Associate", "Store Manager", "Cashier"],
-            //     "Hospitality": ["Hotel Manager", "Chef", "Tour Guide", "Event Planner"],
-            //     "Transportation": ["Truck Driver", "Pilot", "Warehouse Manager", "Supply Chain Coordinator"],
-            //     "Government": ["Police Officer", "Firefighter", "Public Administrator"],
-            //     "Legal": ["Lawyer", "Paralegal", "Judge", "Legal Assistant"],
-            //     "Engineering": ["Mechanical Engineer", "Electrical Engineer", "Civil Engineer"],
-            //     "Science": ["Scientist", "Laboratory Technician", "Research Analyst"],
-            //     "Media": ["Journalist", "Actor", "Video Editor", "Producer"],
-            //     "Marketing": ["Marketing Manager", "Graphic Designer", "Social Media Specialist"],
-            //     "Telecommunications": ["Network Technician", "Telecommunications Engineer"],
-            //     "Energy": ["Electrician", "Power Plant Operator", "Renewable Energy Technician"],
-            //     "RealEstate": ["Real Estate Agent", "Property Manager", "Appraiser"],
-            //     "Insurance": ["Insurance Agent", "Claims Adjuster", "Underwriter"],
-            //     "HumanResources": ["Recruiter", "HR Manager", "Training Specialist"],
-            //     "Customer Service": ["Customer Support Representative", "Call Center Agent"],
-            //     "Nonprofit": ["Program Coordinator", "Fundraiser", "Volunteer Manager"],
-            //     "ArtsDesign": ["Graphic Designer", "Fashion Designer", "Illustrator"],
-            //     "Mining": ["Miner", "Geologist", "Environmental Engineer"],
-            //     "FoodBeverage": ["Baker", "Restaurant Manager", "Food Scientist"],
-            //     "Automotive": ["Auto Mechanic", "Automotive Engineer", "Service Advisor"],
-            //     "Aerospace": ["Aircraft Mechanic", "Pilot", "Aerospace Engineer"],
-            //     "Biotechnology": ["Biochemist", "Pharmaceutical Sales Representative", "Research Scientist"],
-            //     "Environmental": ["Environmental Consultant", "Conservation Officer", "Sustainability Specialist"]
-            // };
+                // Direct data map extracted from your reference chart
+                // const jobRolesData = {
+                //     "Agriculture": ["Farmer", "Rancher", "Agricultural Technician"],
+                //     "Construction": ["Carpenter", "Electrician", "Plumber", "Civil Engineer"],
+                //     "Manufacturing": ["Factory Worker", "Machine Operator", "Quality Inspector"],
+                //     "Healthcare": ["Doctor", "Nurse", "Pharmacist", "Medical Assistant"],
+                //     "Education": ["Teacher", "Professor", "School Administrator"],
+                //     "Technology": ["Software Developer", "Network Engineer", "Cybersecurity Analyst"],
+                //     "Finance": ["Accountant", "Financial Analyst", "Banker", "Auditor"],
+                //     "Retail": ["Sales Associate", "Store Manager", "Cashier"],
+                //     "Hospitality": ["Hotel Manager", "Chef", "Tour Guide", "Event Planner"],
+                //     "Transportation": ["Truck Driver", "Pilot", "Warehouse Manager", "Supply Chain Coordinator"],
+                //     "Government": ["Police Officer", "Firefighter", "Public Administrator"],
+                //     "Legal": ["Lawyer", "Paralegal", "Judge", "Legal Assistant"],
+                //     "Engineering": ["Mechanical Engineer", "Electrical Engineer", "Civil Engineer"],
+                //     "Science": ["Scientist", "Laboratory Technician", "Research Analyst"],
+                //     "Media": ["Journalist", "Actor", "Video Editor", "Producer"],
+                //     "Marketing": ["Marketing Manager", "Graphic Designer", "Social Media Specialist"],
+                //     "Telecommunications": ["Network Technician", "Telecommunications Engineer"],
+                //     "Energy": ["Electrician", "Power Plant Operator", "Renewable Energy Technician"],
+                //     "RealEstate": ["Real Estate Agent", "Property Manager", "Appraiser"],
+                //     "Insurance": ["Insurance Agent", "Claims Adjuster", "Underwriter"],
+                //     "HumanResources": ["Recruiter", "HR Manager", "Training Specialist"],
+                //     "Customer Service": ["Customer Support Representative", "Call Center Agent"],
+                //     "Nonprofit": ["Program Coordinator", "Fundraiser", "Volunteer Manager"],
+                //     "ArtsDesign": ["Graphic Designer", "Fashion Designer", "Illustrator"],
+                //     "Mining": ["Miner", "Geologist", "Environmental Engineer"],
+                //     "FoodBeverage": ["Baker", "Restaurant Manager", "Food Scientist"],
+                //     "Automotive": ["Auto Mechanic", "Automotive Engineer", "Service Advisor"],
+                //     "Aerospace": ["Aircraft Mechanic", "Pilot", "Aerospace Engineer"],
+                //     "Biotechnology": ["Biochemist", "Pharmaceutical Sales Representative", "Research Scientist"],
+                //     "Environmental": ["Environmental Consultant", "Conservation Officer", "Sustainability Specialist"]
+                // };
 
-            // Listen for the change directly on the element
-            industrySelect.addEventListener('change', function() {
-                const selectedIndustry = this.value;
-                console.log("Industry changed to:", selectedIndustry); // Look at your browser console (F12)
+                // Listen for the change directly on the element
+                // industrySelect.addEventListener('change', function () {
+                    // const selectedIndustry = this.value;
+                    // console.log("Industry changed to:", selectedIndustry); // Look at your browser console (F12)
 
-                // Reset the Step 6 dropdown to its default placeholder state
-                positionSelect.innerHTML = '<option value="" disabled selected>Select a role</option>';
+                    // Reset the Step 6 dropdown to its default placeholder state
+                    // // positionSelect.innerHTML = '<option value="" disabled selected>Select a role</option>';
 
-                // If data matches, append options dynamically
-                if (jobRolesData[selectedIndustry]) {
-                    jobRolesData[selectedIndustry].forEach(role => {
-                        const opt = document.createElement('option');
-                        opt.value = role;
-                        opt.textContent = role;
-                        positionSelect.appendChild(opt);
-                    });
-                    console.log(`Successfully populated ${jobRolesData[selectedIndustry].length} positions.`);
-                } else {
-                    console.warn("No matching role arrays found for value:", selectedIndustry);
-                }
-            });
-        });
+                    // If data matches, append options dynamically
+            //         if (jobRolesData[selectedIndustry]) {
+            //             jobRolesData[selectedIndustry].forEach(role => {
+            //                 const opt = document.createElement('option');
+            //                 opt.value = role;
+            //                 opt.textContent = role;
+            //                 positionSelect.appendChild(opt);
+            //             });
+            //             console.log(`Successfully populated ${jobRolesData[selectedIndustry].length} positions.`);
+            //         } else {
+            //             console.warn("No matching role arrays found for value:", selectedIndustry);
+            //         }
+            //     });
+            // });
 
             /* ---------------------------------------------- */
             /* Step 3: Phone — numbers and phone punctuation    */
@@ -480,73 +526,148 @@
             /* ---------------------------------------------- */
             /* Step 7: Immigration History conditional fields   */
             /* ---------------------------------------------- */
-            const immigrationHistorySelect = document.getElementById('immigrationHistory');
-            const immigrationDetails = document.getElementById('immigrationDetails');
-            const immigrationCountrySelect = document.getElementById('immigrationCountry');
+            let immigrationHistorySelect, immigrationDetails, entriesContainer, addMoreBtn;
+            document.addEventListener('DOMContentLoaded', function () {
+                immigrationHistorySelect = document.getElementById('immigrationHistory');
+                immigrationDetails = document.getElementById('immigrationDetails');
+                entriesContainer = document.getElementById('immigrationEntriesContainer');
+                addMoreBtn = document.getElementById('addMoreImmigration');
 
-            const countryList = [
-                "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
-                "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
-                "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
-                "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria",
-                "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
-                "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
-                "Congo (Republic of the)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia",
-                "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica",
-                "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
-                "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
-                "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala",
-                "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland",
-                "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica",
-                "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait",
-                "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
-                "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia",
-                "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius",
-                "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco",
-                "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands",
-                "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia",
-                "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea",
-                "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania",
-                "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
-                "Saint Vincent and the Grenadines", "Samoa", "San Marino",
-                "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
-                "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
-                "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka",
-                "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan",
-                "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago",
-                "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine",
-                "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
-                "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen",
-                "Zambia", "Zimbabwe"
-            ];
+                const countryList = [
+                    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
+                    "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
+                    "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
+                    "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria",
+                    "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
+                    "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
+                    "Congo (Republic of the)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia",
+                    "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica",
+                    "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
+                    "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
+                    "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala",
+                    "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland",
+                    "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica",
+                    "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait",
+                    "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
+                    "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia",
+                    "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius",
+                    "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco",
+                    "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands",
+                    "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia",
+                    "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea",
+                    "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania",
+                    "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+                    "Saint Vincent and the Grenadines", "Samoa", "San Marino",
+                    "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
+                    "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
+                    "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka",
+                    "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan",
+                    "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago",
+                    "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine",
+                    "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
+                    "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen",
+                    "Zambia", "Zimbabwe"
+                ];
 
-            if (immigrationCountrySelect) {
-                countryList.forEach(country => {
-                    const opt = document.createElement('option');
-                    opt.value = country;
-                    opt.textContent = country;
-                    immigrationCountrySelect.appendChild(opt);
-                });
-            }
-
-            function toggleImmigrationDetails() {
-                if (!immigrationHistorySelect || !immigrationDetails) return;
-                const isYes = immigrationHistorySelect.value === 'Yes';
-                immigrationDetails.classList.toggle('tf-subfields-hidden', !isYes);
-                if (!isYes) {
-                    // Reset and clear any errors on the hidden follow-up fields
-                    immigrationDetails.querySelectorAll('.tf-input, .tf-select').forEach(el => {
-                        el.value = '';
-                        el.classList.remove('invalid');
+                // Helper utility to inject option sets dynamically into standard selection drops
+                function populateCountries(selectElement) {
+                    if (!selectElement) return;
+                    countryList.forEach(country => {
+                        const opt = document.createElement('option');
+                        opt.value = country;
+                        opt.textContent = country;
+                        selectElement.appendChild(opt);
                     });
-                    immigrationDetails.querySelectorAll('.tf-error').forEach(el => el.classList.remove('visible'));
                 }
-            }
 
-            if (immigrationHistorySelect) {
-                immigrationHistorySelect.addEventListener('change', toggleImmigrationDetails);
-                toggleImmigrationDetails();
-            }
+                // Populate the baseline original visible element on run
+                const initialCountrySelect = entriesContainer.querySelector('.immigration-country');
+                populateCountries(initialCountrySelect);
+
+                // Visibility management worker toggle function
+                function toggleImmigrationDetails() {
+                    if (!immigrationHistorySelect || !immigrationDetails) return;
+                    const isYes = immigrationHistorySelect.value === 'Yes';
+                    immigrationDetails.classList.toggle('tf-subfields-hidden', !isYes);
+
+                    if (!isYes) {
+                        // Revert configuration entries cleanly back to exactly 1 block structure
+                        const remainingEntries = entriesContainer.querySelectorAll('.immigration-entry');
+                        remainingEntries.forEach((entry, idx) => {
+                            if (idx === 0) {
+                                // Clear values inside initial baseline blocks safely
+                                entry.querySelectorAll('.tf-input, .tf-select').forEach(el => el.value = '');
+                                entry.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+                            } else {
+                                // Drop all extended blocks generated from the stack
+                                entry.remove();
+                            }
+                        });
+                        immigrationDetails.querySelectorAll('.tf-error').forEach(el => el.classList.remove('visible'));
+                    }
+                }
+
+                if (immigrationHistorySelect) {
+                    immigrationHistorySelect.addEventListener('change', toggleImmigrationDetails);
+                    toggleImmigrationDetails();
+                }
+
+                // Dynamic Element Duplicator Mechanism Engine
+                if (addMoreBtn && entriesContainer) {
+                    addMoreBtn.addEventListener('click', function () {
+                        // Generate clean isolated node entry element wrapper blocks
+                        const newEntry = document.createElement('div');
+                        newEntry.className = 'immigration-entry';
+                        newEntry.style.cssText = "padding-top: 25px; margin-top: 25px; border-top: 1px dashed #e5e7eb; position: relative;";
+
+                        // Inject matching UI block properties natively configured inside string layouts
+                        newEntry.innerHTML = `
+                            <button type="button" class="remove-immigration-btn" style="position: absolute; right: 0; top: 0; background: none; border: none; color: #dc2626; font-size: 0.9rem; cursor: pointer; padding: 4px 8px;">
+                                <i class="fa-solid fa-trash-can"></i> Remove
+                            </button>
+
+                            <label class="tf-question">What country?</label>
+                            <select class="tf-select immigration-country">
+                                <option value="" disabled selected>Select a country</option>
+                            </select>
+                            <span class="tf-error" data-error-for="immigrationCountry">Please select a country.</span>
+
+                            <label class="tf-question">What type of visa application?</label>
+                            <select class="tf-select immigration-visa-type">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="Non-Immigrant">Non-Immigrant Visas (Temporary Stays)</option>
+                                <option value="Immigrant">Immigrant Visas (Permanent Residency)</option>
+                            </select>
+                            <span class="tf-error" data-error-for="immigrationVisaType">Please select an option.</span>
+
+                            <label class="tf-question">What date did you apply?</label>
+                            <input type="date" class="tf-input immigration-date">
+                            <span class="tf-error" data-error-for="immigrationDate">Please select a date.</span>
+
+                            <label class="tf-question">What are the results?</label>
+                            <select class="tf-select immigration-result">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Refused">Refused</option>
+                                <option value="In process">In process</option>
+                            </select>
+                            <span class="tf-error" data-error-for="immigrationResult">Please select an option.</span>
+                        `;
+
+                        // Core integration step: Populate data drops inside generated instances before tracking
+                        const dynamicCountrySelect = newEntry.querySelector('.immigration-country');
+                        populateCountries(dynamicCountrySelect);
+
+                        // Context attachment event handler configuration for functional trash triggers
+                        newEntry.querySelector('.remove-immigration-btn').addEventListener('click', function () {
+                            newEntry.remove();
+                        });
+
+                        // Append onto active visual screen matrix arrays
+                        entriesContainer.appendChild(newEntry);
+                    });
+                }
+            });
 
             /* ---------------------------------------------- */
             /* Step 8: English Test conditional fields          */
@@ -577,121 +698,121 @@
             /* Multi-file uploaders (documents + CV), 5MB max   */
             /* per individual file                               */
             /* ---------------------------------------------- */
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+            const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
-function formatSize(bytes) {
-    if (bytes < 1024) return bytes + ' B';
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
-}
+            function formatSize(bytes) {
+                if (bytes < 1024) return bytes + ' B';
+                if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+                return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+            }
 
-// Added optional allowedRegex parameter to handle specific file restrictions
-function createUploader(dropEl, inputEl, listEl, allowedRegex = null) {
-    const state = { files: [] };
+            // Added optional allowedRegex parameter to handle specific file restrictions
+            function createUploader(dropEl, inputEl, listEl, allowedRegex = null) {
+                const state = { files: [] };
 
-    function render() {
-        listEl.innerHTML = '';
-        state.files.forEach((file, idx) => {
-            const item = document.createElement('div');
-            item.className = 'tf-file-item';
-            item.innerHTML = `
+                function render() {
+                    listEl.innerHTML = '';
+                    state.files.forEach((file, idx) => {
+                        const item = document.createElement('div');
+                        item.className = 'tf-file-item';
+                        item.innerHTML = `
                 <span><i class="fa-solid fa-file-lines"></i> ${file.name} <em>(${formatSize(file.size)})</em></span>
                 <button type="button" class="remove-file" aria-label="Remove file" data-idx="${idx}"><i class="fa-solid fa-xmark"></i></button>
             `;
-            listEl.appendChild(item);
-        });
-        listEl.querySelectorAll('.remove-file').forEach(btn => {
-            btn.addEventListener('click', () => {
-                state.files.splice(parseInt(btn.dataset.idx, 10), 1);
-                render();
-            });
-        });
-    }
+                        listEl.appendChild(item);
+                    });
+                    listEl.querySelectorAll('.remove-file').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            state.files.splice(parseInt(btn.dataset.idx, 10), 1);
+                            render();
+                        });
+                    });
+                }
 
-    function addFiles(fileArray) {
-        const oversized = [];
-        const invalidTypes = [];
+                function addFiles(fileArray) {
+                    const oversized = [];
+                    const invalidTypes = [];
 
-        fileArray.forEach(file => {
-            // 1. Validate File Type Extension
-            if (allowedRegex && !allowedRegex.test(file.name)) {
-                invalidTypes.push(file.name);
-                return;
+                    fileArray.forEach(file => {
+                        // 1. Validate File Type Extension
+                        if (allowedRegex && !allowedRegex.test(file.name)) {
+                            invalidTypes.push(file.name);
+                            return;
+                        }
+
+                        // 2. Validate File Size
+                        if (file.size > MAX_FILE_SIZE) {
+                            oversized.push(file.name);
+                            return;
+                        }
+
+                        const alreadyAdded = state.files.some(f => f.name === file.name && f.size === file.size);
+                        if (!alreadyAdded) state.files.push(file);
+                    });
+
+                    // Error Alert for Invalid File Formats
+                    if (invalidTypes.length) {
+                        Swal.fire({
+                            title: 'Invalid file type',
+                            text: `Please upload PDF or DOCX files only. Skipped: ${invalidTypes.join(', ')}`,
+                            icon: 'error',
+                            confirmButtonColor: '#dc2626'
+                        });
+                    }
+
+                    // Warning Alert for Oversized Files
+                    if (oversized.length) {
+                        Swal.fire({
+                            title: 'File too large',
+                            text: `The following file(s) exceed the 5MB limit and were not added: ${oversized.join(', ')}`,
+                            icon: 'warning',
+                            confirmButtonColor: '#d00'
+                        });
+                    }
+                    render();
+                }
+
+                dropEl.addEventListener('click', () => inputEl.click());
+                inputEl.addEventListener('change', () => {
+                    addFiles(Array.from(inputEl.files));
+                    inputEl.value = '';
+                });
+                ['dragenter', 'dragover'].forEach(evt => {
+                    dropEl.addEventListener(evt, (e) => {
+                        e.preventDefault();
+                        dropEl.classList.add('drag-over');
+                    });
+                });
+                ['dragleave', 'drop'].forEach(evt => {
+                    dropEl.addEventListener(evt, (e) => {
+                        e.preventDefault();
+                        dropEl.classList.remove('drag-over');
+                    });
+                });
+                dropEl.addEventListener('drop', (e) => {
+                    if (e.dataTransfer.files.length) addFiles(Array.from(e.dataTransfer.files));
+                });
+
+                return {
+                    getFiles: () => state.files,
+                    reset: () => { state.files = []; render(); }
+                };
             }
 
-            // 2. Validate File Size
-            if (file.size > MAX_FILE_SIZE) {
-                oversized.push(file.name);
-                return;
-            }
+            // Documents Uploader (Unrestricted/Default)
+            const documentsUploader = createUploader(
+                document.getElementById('docsUploadGroup'),
+                document.getElementById('docsFileInput'),
+                document.getElementById('docsFileList')
+            );
 
-            const alreadyAdded = state.files.some(f => f.name === file.name && f.size === file.size);
-            if (!alreadyAdded) state.files.push(file);
-        });
-
-        // Error Alert for Invalid File Formats
-        if (invalidTypes.length) {
-            Swal.fire({
-                title: 'Invalid file type',
-                text: `Please upload PDF or DOCX files only. Skipped: ${invalidTypes.join(', ')}`,
-                icon: 'error',
-                confirmButtonColor: '#dc2626'
-            });
-        }
-
-        // Warning Alert for Oversized Files
-        if (oversized.length) {
-            Swal.fire({
-                title: 'File too large',
-                text: `The following file(s) exceed the 5MB limit and were not added: ${oversized.join(', ')}`,
-                icon: 'warning',
-                confirmButtonColor: '#d00'
-            });
-        }
-        render();
-    }
-
-    dropEl.addEventListener('click', () => inputEl.click());
-    inputEl.addEventListener('change', () => {
-        addFiles(Array.from(inputEl.files));
-        inputEl.value = '';
-    });
-    ['dragenter', 'dragover'].forEach(evt => {
-        dropEl.addEventListener(evt, (e) => {
-            e.preventDefault();
-            dropEl.classList.add('drag-over');
-        });
-    });
-    ['dragleave', 'drop'].forEach(evt => {
-        dropEl.addEventListener(evt, (e) => {
-            e.preventDefault();
-            dropEl.classList.remove('drag-over');
-        });
-    });
-    dropEl.addEventListener('drop', (e) => {
-        if (e.dataTransfer.files.length) addFiles(Array.from(e.dataTransfer.files));
-    });
-
-    return {
-        getFiles: () => state.files,
-        reset: () => { state.files = []; render(); }
-    };
-}
-
-// Documents Uploader (Unrestricted/Default)
-const documentsUploader = createUploader(
-    document.getElementById('docsUploadGroup'),
-    document.getElementById('docsFileInput'),
-    document.getElementById('docsFileList')
-);
-
-// CV Uploader (Strictly enforced to pass .pdf and .docx patterns only)
-const cvUploader = createUploader(
-    document.getElementById('cvUploadGroup'),
-    document.getElementById('cvFileInput'),
-    document.getElementById('cvFileList'),
-    /(\.pdf|\.docx)$/i
-);
+            // CV Uploader (Strictly enforced to pass .pdf and .docx patterns only)
+            const cvUploader = createUploader(
+                document.getElementById('cvUploadGroup'),
+                document.getElementById('cvFileInput'),
+                document.getElementById('cvFileList'),
+                /(\.pdf|\.docx)$/i
+            );
 
             /* ---------------------------------------------- */
             /* Validation                                        */
@@ -914,7 +1035,7 @@ const cvUploader = createUploader(
                 <a href="index.html#about">About</a>
                 <a href="index.html#steps">Steps</a>
                 <a href="index.html#contact">Contact</a>
-                <a href="/apply_now.html">Apply Now</a>
+                <a href="apply_now.html">Apply Now</a>
             </div>
 
             <div class="footer-col">
@@ -927,16 +1048,19 @@ const cvUploader = createUploader(
             <div class="footer-col">
                 <h4>Contact</h4>
                 <a href="tel:+12043392522"><i class="fa-solid fa-phone" style="width:14px;"></i> (204) 339 2522</a>
-                <a href="mailto:info@duqueimmigration.ca"><i class="fa-solid fa-envelope" style="width:14px;"></i> info@duqueimmigration.ca</a>
-                <a href="index.html#contact"><i class="fa-solid fa-location-dot" style="width:14px;"></i> Winnipeg, Manitoba</a>
+                <a href="mailto:info@duqueimmigration.ca"><i class="fa-solid fa-envelope" style="width:14px;"></i>
+                    info@duqueimmigration.ca</a>
+                <a href="index.html#contact"><i class="fa-solid fa-location-dot" style="width:14px;"></i> Winnipeg,
+                    Manitoba</a>
             </div>
         </div>
 
         <div class="footer-bottom">
             <span>&copy; <span id="currentYear"></span> Duque Workforce Connect. All rights reserved.</span>
-            <span><a href="index.html#home">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="index.html#home">Terms of Service</a></span>
+            <span><a href="index.html#home">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="index.html#home">Terms of
+                    Service</a></span>
         </div>
-        
+
     </footer>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">

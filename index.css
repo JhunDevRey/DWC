@@ -75,7 +75,7 @@ img, svg {
    -khtml-user-drag: none;   /* Konqueror HTML */
    -moz-user-drag: none;     /* Firefox */
    -o-user-drag: none;       /* Opera */
-   user-drag: none;          /* Standard */
+   -user-drag: none;          /* Standard */
 }
 
 h1, h2, h3, h4 {
@@ -502,22 +502,26 @@ h2 {
 }
 
 .bg-1 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1530025809667-1f4bcff8e60f?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://cdn.sixtyandme.com/wp-content/uploads/2022/04/Sixty-and-Me_Exploring-5-of-Canadas-Most-Beautiful-Cities.jpg?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 0s;
 }
 
 .bg-2 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1568036998293-09f73fcd6835?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 6s;
+
+    
 }
 
 .bg-3 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1562364692-16836a8b9b08?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://cwccanada.ca/wp-content/uploads/2025/08/toronto-buildings.jpg?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 12s;
+
+    
 }
 
 .bg-4 {
-    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1568568756062-7ba6d2d4ac57?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(163, 0, 0, 0.55)), url('https://framerusercontent.com/images/W5AVW9NoJ7cnzEUk0Yav9bPJpgM.png?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     animation-delay: 18s;
 }
 
@@ -529,7 +533,7 @@ h2 {
     100% { opacity: 0; }
 }
 
-.cursor {
+.penType {
     display: inline-block;
     color: var(--gold-light);
     margin-left: 4px;
