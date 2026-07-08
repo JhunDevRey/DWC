@@ -186,3 +186,37 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('error', () => {
     document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
 });
+
+// 1. Disable Right-Click (Context Menu)
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // 2. Disable Text Selection/Highlighting via JS
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+  });
+
+  // 3. Disable common DevTools and Inspect Element keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    // Disable F12
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+    // Disable Ctrl+Shift+I / Cmd+Option+I (Inspect)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+      e.preventDefault();
+    }
+    // Disable Ctrl+Shift+J / Cmd+Option+J (Console)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+      e.preventDefault();
+    }
+    // Disable Ctrl+Shift+C / Cmd+Option+C (Element Selector)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
+      e.preventDefault();
+    }
+    // Disable Ctrl+U / Cmd+Option+U (View Source)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+      e.preventDefault();
+    }
+  });
